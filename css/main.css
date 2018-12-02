@@ -1,0 +1,27 @@
+.name
+{
+	font-size: 50px;	
+	font-family: 'Yatra One', cursive;
+	color: red;
+}
+
+#countdown, #bg
+{
+	font-size: 35px;	
+	font-family: 'Yatra One', cursive;
+	color: black;
+}
+
+.titled{
+	font-size: 35px;
+	padding: 40px;
+	padding-top: 60px;
+	color: gray;
+}
+
+.titlee{
+	font-size: 25px;
+	padding: 40px;
+	padding-top: 60px;
+	color: gray;
+}

@@ -1,1 +1,37 @@
-Hello Its Devashish
+<html>
+	<head>
+		<title>Devashish</title>
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<!--meta http-equiv="refresh" content="5; URL=https://devacsh.wordpress.com/">
+		<meta name="Devashish" content="automatic redirection"-->
+		<link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+		
+	</head>
+	<body>
+		<div class="titled">
+			Hey, I am <span class="name">Devashish Gupta</span>.
+			<br/>nice to see you...!<br/>
+		</div>
+		<div class="titlee">
+			page is under construction <span id="bg"> &lt;/&gt; </span><br/><br/>
+			 redirecting to blog page within <span id="countdown" class =""></span> seconds ;)
+		</div>
+
+
+
+	</body>
+	<script>
+		var seconds = 6;
+		function countdown() {
+			seconds = seconds - 1;
+			if (seconds <0) {
+			   window.location = "https://devacsh.wordpress.com";
+			} else {
+			//console.log(seconds);
+				document.getElementById("countdown").innerHTML = seconds;
+				window.setTimeout("countdown()", 1000);
+			}
+		}
+		countdown();
+	</script>
+</html>
