@@ -1,0 +1,93 @@
+
+.box {
+  width: fit-content;
+  background: #cff9d9;
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Arya', sans-serif;
+  color: #3a7648;
+  position:relative;
+  border-radius: 6px;
+}
+.box:before {
+  content: "";
+  width: 3px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 25px solid #cff9d9;
+  border-bottom: 10px solid transparent;
+  left: 1px;
+  top: 68px;
+  border-radius: 6px
+}
+
+
+/*----------------------Github data------------------------*/
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 10px;
+
+}
+
+.card:hover {
+  box-shadow: 0 12px 25px 0 rgba(0,0,0,0.2);
+}
+
+
+
+.main-text
+{
+    position: absolute;
+    top: 40%;
+    width: 96.66666666666666%;
+    color: #FFF;
+    font-family: 'Arya', sans-serif;
+    font-size: 70px;
+
+}
+
+
+.brandtitled{
+  font-family: 'Arya', sans-serif;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+/*Color navbar*/
+#changeBg{
+  background: rgba(58, 118, 70, 0);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+nav ul > li {
+  display: inline-block;
+}
+
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.carousel-caption {
+   position: absolute;
+   top:25%;
+   margin-left: 40%;
+}
+
+
+.typingStyle{
+  font-family: 'Arya', sans-serif;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 30px;
+  
+}

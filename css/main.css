@@ -1,16 +1,18 @@
 .name
 {
-	font-size: 50px;	
+	font-size: 50px;
 	font-family: 'Yatra One', cursive;
 	color: red;
 }
 
 #countdown, #bg
 {
-	font-size: 35px;	
+	font-size: 35px;
 	font-family: 'Yatra One', cursive;
 	color: black;
 }
+
+
 
 .titled{
 	font-size: 35px;
