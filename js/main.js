@@ -54,3 +54,72 @@ var TxtType = function(el, toRotate, period) {
         css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #cff9d9}";
         document.body.appendChild(css);
     };
+
+
+
+
+
+// Google Charts
+    //
+    // google.charts.load("current", {packages:["corechart"]});
+    // google.charts.setOnLoadCallback(drawChart);
+    // function drawChart() {
+    //   var data = google.visualization.arrayToDataTable([
+    //     ['Language', 'Speakers (in %)'],
+    //     ['Java', 70], ['Python', 35], ['Android_Development', 60],
+    //     ['C', 25], ['C++', 30], ['SQL', 50],['DS & Algorithm',60],['Git',60],['PHP',25],['Angular',35]
+    //   ]);
+    //
+    //   var options = {
+    //     title: 'Skill ',
+    //     legend: 'none',
+    //     pieSliceText: 'label',
+    //     slices: {  4: {offset: 0.2},
+    //               12: {offset: 0.3},
+    //               14: {offset: 0.4},
+    //               15: {offset: 0.5},
+    //     },
+    //   };
+    //
+    //   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    //   chart.draw(data, options);
+    // }
+
+
+
+
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Skill', 'Rating',],
+        ['Java', 70],
+        ['javascript/TypeScript', 25],
+        ['C/C++', 35],
+        ['Python3', 60],
+        ['Angular6', 20],
+        ['Php', 25],
+        ['SQL', 50],
+        ['Android_Development', 60],
+        ['Data Structures/Algorithm', 55]
+      ]);
+
+      var options = {
+        title: 'Skill Set',
+        chartArea: {width: '50%',length:'auto'},
+        vAxis: {
+          title: 'Rating',
+          minValue: 0
+        },
+        hAxis: {
+          title: 'Skill Set',
+
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }

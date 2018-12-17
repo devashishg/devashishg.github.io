@@ -30,7 +30,7 @@
   /* Add shadows to create the "card" effect */
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  padding: 10px;
+  padding: 20px;
 
 }
 
@@ -55,6 +55,7 @@
 .brandtitled{
   font-family: 'Arya', sans-serif;
   text-shadow: 2px 2px 4px #000000;
+  font-size: 100%;
 }
 
 /*Color navbar*/
@@ -87,7 +88,59 @@ nav ul > li {
 
 .typingStyle{
   font-family: 'Arya', sans-serif;
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: 2px 2px 4px #808080;
   font-size: 30px;
-  
+
+}
+
+
+
+.contactDetails{
+  font-family: 'Arya', sans-serif;
+  text-shadow: 1px 1px 2px #000000;
+  font-size: 30px;
+  color: #cff9d9;
+}
+
+.contact{
+  margin-top: 30px;
+  padding: 20px;
+  font-family: 'Arya', sans-serif;
+}
+
+
+.titleContact{
+  margin-top: 10px;
+  font-family: 'Arya', sans-serif;
+  text-shadow: 2px 2px 4px #808080;
+  font-size: 50px;
+  color: #3a7648;
+  display:inline-block;
+  position:relative;
+}
+/* Side navigation toggle*/
+
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+  position: absolute; /* Position them relative to the browser window */
+  left: -100px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 10px; /* 15px padding */
+  width: 150px; /* Set a specific width */
+  text-decoration: bold; /* Remove underline */
+  font-size: 25px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 0 5px 5px 0;
+  font-family: 'Arya',sans-serif;/* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+  left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#about {
+  top: 30%;
+  background-color: #3a7648;
 }
