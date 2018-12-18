@@ -25,17 +25,20 @@
 }
 
 
+
+
 /*----------------------Github data------------------------*/
 .card {
   /* Add shadows to create the "card" effect */
-  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  padding: 20px;
+  padding: 10px;
+  overflow: auto;
 
 }
 
 .card:hover {
-  box-shadow: 0 12px 25px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 7px 0 rgba(0,0,0,0.2);
 }
 
 
@@ -90,16 +93,15 @@ nav ul > li {
   font-family: 'Arya', sans-serif;
   text-shadow: 2px 2px 4px #808080;
   font-size: 30px;
-
+  padding :6px;
 }
 
 
 
 .contactDetails{
   font-family: 'Arya', sans-serif;
-  text-shadow: 1px 1px 2px #000000;
   font-size: 30px;
-  color: #cff9d9;
+  color: #34495E;
 }
 
 .contact{
@@ -109,23 +111,30 @@ nav ul > li {
 }
 
 
+
 .titleContact{
   margin-top: 10px;
   font-family: 'Arya', sans-serif;
   text-shadow: 2px 2px 4px #808080;
   font-size: 50px;
-  color: #3a7648;
-  display:inline-block;
-  position:relative;
+  color: darkseagreen;
+  display: inline-block;
+  margin-top: -70px;
+  background-color: #ff6666;
+  padding: 10px;
 }
-/* Side navigation toggle*/
+
+.log{
+  color:white;
+  font-size: 20px;
+  padding-top:-20px;
+}
 
 
-/* Style the links inside the sidenav */
 #mySidenav a {
   position: absolute; /* Position them relative to the browser window */
   left: -100px; /* Position them outside of the screen */
-  transition: 0.3s; /* Add transition on hover */
+  transition: 0.9s; /* Add transition on hover */
   padding: 10px; /* 15px padding */
   width: 150px; /* Set a specific width */
   text-decoration: bold; /* Remove underline */
@@ -143,4 +152,98 @@ nav ul > li {
 #about {
   top: 30%;
   background-color: #3a7648;
+}
+
+
+
+/* Photo */
+
+.content {
+  width: 50%;
+  align-self: center;
+}
+
+.imaging {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  border: 10px solid #145236;
+  border-radius: 280px;
+  border-top-style: none;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.content:hover .imaging {
+  opacity: 0.3;
+}
+
+.content:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.textAbout{
+  margin: 10px;
+  font-size: 18px;
+  font-style: 'Arya' sans-serif;
+}
+
+
+
+
+
+
+
+
+
+/* buttons */
+
+.myButton {
+	background-color:transparent;
+	-moz-border-radius:26px;
+	-webkit-border-radius:26px;
+	border-radius:26px;
+	border:1px solid white;
+	display:inline-block;
+	cursor:pointer;
+	color:darkseagreen;
+	font-family:'Arya' sans-serif;
+	font-size:22px;
+	font-weight:bold;
+	padding:12px 24px;
+	text-decoration:none;
+	text-shadow: 0 1px 5px #3d768a;
+}
+.myButton:hover {
+	background-color: white;
+  color:darkseagreen;
+  text-shadow: none;
+
+}
+
+.myButton:active {
+	position:relative;
+	top:1px;
 }

@@ -3,6 +3,10 @@
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Home</title>
+
+      <link rel="icon" type="image/png" href="media/favicon-32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="media/favicon-16x16.png" sizes="16x16" />
+
       <link href="css/slider/slider.css" type="text/css" rel="stylesheet">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -43,10 +47,10 @@
                   </a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="media/Resume.pdf">Resume</a>
+                  <a class="nav-link" href="media/resume.pdf">Resume</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Works</a>
@@ -116,9 +120,47 @@
       </div>
     </header>
 
+
     <div id="mySidenav" class="sidenav">
       <a href="media/resume.pdf" style="text-decoration:none"  id="about">Resume&nbsp;  <i class="material-icons">cloud_download</i></a>
     </div>
+
+    <section class="py-5">
+      <div class="container-fluid">
+        <div class="row justify-content-md-center">
+          <div class="col col-lg">
+                <div class="content container">
+                  <img src="media/me.jpeg" alt="Avatar" class="imaging" style="width:100%">
+                  <div class="middle">
+                    <div style="font-family: 'Arya', sans-serif; font-size:20px">Hey, I'm Devashish</div><br/>
+                    <a href="#contact" class="text" class="myButton" style="text-decoration:none;border-radius:50px;">Wanna_Contact</a>
+                  </div>
+                </div>
+
+          </div>
+          <div class="col col-lg">
+            <div class="card">
+              <div class="typingStyle">
+                कुछ मेरे बारे में....<br/>
+                  It's me...
+              </div>
+              <div class="textAbout">
+                Devashish Gupta form Jhansi currently at Ghaziabad.I am a Computer Science/Information Technoloy Student. I am enthusiast for Coding, working on different project and building cool stuff.I also does competitive coding occasionally. I enjoys that moment a lot when trying to solve the problem reaches that successful solution.
+                It is always fun for me to be a newbie for different technology because It is some what challenging but a lot to learn.
+                For me there is not technoloy/framework is favourite as soon as i start working/learning that thing and explore that stuff and it becomes my boombox.
+                For me learning by working is far better than working by learning because that impacts hardly.
+                Apart from technoloy i am also a music addict,loves listening major hindi,english,punjabi songs.I also enjoys playing different outdoor games like Cricket, volleyball, badminton etc.I have also great enthusism for gadgets/mobile-devices like headphones, handset, laptops etc.
+                I had also started reading books by different suggestions and It was really fun reading "मुंशी प्रेम चन्द्र". hope i'll read different books in early upcoming days.
+                <br/>Currently Working as newbie on a new tech-Stack.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
 
     <section class="py-5" >
       <div class="container">
@@ -132,34 +174,51 @@
           GitHubCalendar(".calendar", "devashishg");
         </script>
       </div>
-      <div class="container card" style="margin-top:30px">
-        <!-- <div id="piechart" style="width: 900px; height: 500px;"></div> -->
+      <div class="container card" style= "margin-top:30px">
+        <!-- <div class="row TitleContact" align="center">
+          Skill Set
+        </div> -->
         <div id="chart_div"></div>
       </div>
     </section>
+
+
+
+
     <section class="py-5" id="contact">
-      <div class="container-fluid card" style="background:#cff9d9">
+      <div class="container-fluid card" style="background:#ff6666">
+        <br/><hr width="70%" color="white" style="height:2px" NOSHADE>
         <div class="row " align="center">
-          <div class="col-sm text-center TitleContact">
-            Contact Details
+
+          <div class="col-sm-8 text-center" id="contact">
+            <span class=" TitleContact">Contact Details</span>
           </div>
         </div>
         <div class="row" align="center">
           <div class="col-sm text-center contactDetails " style="font-family:'Arya',sans-serif">
-            If you just want to say Hello, or wanna work collebratively and build some cool stuff.<br/>
-            Please contact me. I will love to hear from you.
+            If you just want to say Hello, or wanna collebrate and build some cool stuff<br/>
+             than, Please contact me. I will love to work.
           </div>
         </div>
         <div class="row">
           <div class="col-sm text-center contact">
-            Let's Talk<i class="material-icons">call</i><br/><a href="tel:+91-739-872-8132" class="btn btn-outline-secondary"> +91 7398728132</a>
+            <div class="log">
+              Let's Talk<i class="material-icons">call</i>
+            </div>
+            <a href="tel:+91-739-872-8132" style="text-decoration:none"   class="myButton"> +91 739 872 8132</a>
           </div>
           <div class="col-sm text-center contact">
-            You can shoot a mail<i class="material-icons">email</i>also <br/>
-            <a href="mailto:devxyz8@gmail.com" class="btn btn-outline-secondary">devxyz8@gmail.com</a>
+            <div class="log">
+              You can shoot a mail <i class="material-icons" >email</i> also
+            </div>
+            <a href="mailto:iamdevashishgupta@yahoo.com" style="text-decoration:none"   class="myButton">iamdevashishgupta@yahoo.com</a>
           </div>
-          <div class="col-sm text-center contact">Web Blog<i class="material-icons">web</i><br/>
-              <a href="devacsh.wordpress.com" class="btn btn-outline-secondary">devacsh.wordpress.com</a>
+          <div class="col-sm text-center contact">
+            <div class="log">
+              Web Blog <i class="material-icons">web</i>
+            </div>
+            <a href="https://devacsh.wordpress.com" style="text-decoration:none"   class="myButton">devacsh.wordpress.com</a>
+
           </div>
         </div>
       </div>
