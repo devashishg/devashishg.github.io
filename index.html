@@ -1,37 +1,227 @@
+
 <html>
-	<head>
-		<title>Devashish</title>
-		<link rel="stylesheet" href="css/main.css" type="text/css">
-		<!--meta http-equiv="refresh" content="5; URL=https://devacsh.wordpress.com/">
-		<meta name="Devashish" content="automatic redirection"-->
-		<link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
-		
-	</head>
-	<body>
-		<div class="titled">
-			Hey, I am <span class="name">Devashish Gupta</span>.
-			<br/>nice to see you...!<br/>
-		</div>
-		<div class="titlee">
-			page is under construction <span id="bg"> &lt;/&gt; </span><br/><br/>
-			 redirecting to blog page within <span id="countdown" class =""></span> seconds ;)
-		</div>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Home</title>
+
+      <link rel="icon" type="image/png" href="media/favicon-32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="media/favicon-16x16.png" sizes="16x16" />
+
+      <link href="css/slider/slider.css" type="text/css" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Arya|Asar|Glegoo&amp;subset=devanagari" rel="stylesheet">
+  <!-- Buttons -->
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <!-- Chart Google -->
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <!-- icons -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!-- Github calender-->
+      <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
+      <link  rel="stylesheet" href="css/github.css"/>
+      <script src="js/slider/slider.js"></script>
+      <script src="js/main.js"></script>
+
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="changeBg">
+      <div class="container">
+        <a class="navbar-brand brandtitled" href="#"><h1><b>&ltदेवाशीष/&gt</b></h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="media/resume.pdf">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Works</a>
+                </li>
+                <li class="nav-item">
+                      <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://twitter.com/@imdevaCsh" class="twitter-follow-button" data-show-count="false">Follow @imdevaCsh</a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header id="nav1">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+
+
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active" style="background-image: url('media/cover.png')">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="chat">
+                  <h3 class="box">Hey, It's me</h3>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('media/cover.png')">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="chat">
+                    <h3 class="box">How you are?</h3>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('media/smiley.png')">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="chat">
+                    <h3 class="box">Hope you are doing Good!!</h3>
+                </div>
+              </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div class="main-text hidden-xs">
+        <div class="col-md-12 text-center brandtitled">
+          Devashish<br/>Gupta
+        </div>
+        <div class="typingStyle text-center">
+           I am <span style="text-decoration:none" class="typewrite" data-period="2000" data-type='[ "a Developer.", "a Coder.", "a freelancer."," also a Music addict!"]'>
+             <span class="wrap"></span>
+           </span>
+        </div>
+
+      </div>
+    </header>
+
+
+    <div id="mySidenav" class="sidenav">
+      <a href="media/resume.pdf" style="text-decoration:none"  id="about">Resume&nbsp;  <i class="material-icons">cloud_download</i></a>
+    </div>
+
+    <section class="py-5">
+      <div class="container-fluid">
+        <div class="row justify-content-md-center">
+          <div class="col col-lg">
+                <div class="content container">
+                  <img src="media/me.jpeg" alt="Avatar" class="imaging" style="width:100%">
+                  <div class="middle">
+                    <div style="font-family: 'Arya', sans-serif; font-size:20px">Hey, I'm Devashish</div><br/>
+                    <a href="#contact" class="text" class="myButton" style="text-decoration:none;border-radius:50px;">Wanna_Contact</a>
+                  </div>
+                </div>
+
+          </div>
+          <div class="col col-lg">
+            <div class="card">
+              <div class="typingStyle">
+                कुछ मेरे बारे में....<br/>
+                  It's me...
+              </div>
+              <div class="textAbout">
+                Devashish Gupta form Jhansi currently at Ghaziabad.I am a Computer Science/Information Technoloy Student. I am enthusiast for Coding, working on different project and building cool stuff.I also does competitive coding occasionally. I enjoys that moment a lot when trying to solve the problem reaches that successful solution.
+                It is always fun for me to be a newbie for different technology because It is some what challenging but a lot to learn.
+                For me there is not technoloy/framework is favourite as soon as i start working/learning that thing and explore that stuff and it becomes my boombox.
+                For me learning by working is far better than working by learning because that impacts hardly.
+                Apart from technoloy i am also a music addict,loves listening major hindi,english,punjabi songs.I also enjoys playing different outdoor games like Cricket, volleyball, badminton etc.I have also great enthusism for gadgets/mobile-devices like headphones, handset, laptops etc.
+                I had also started reading books by different suggestions and It was really fun reading "मुंशी प्रेम चन्द्र". hope i'll read different books in early upcoming days.
+                <br/>Currently Working as newbie on a new tech-Stack.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
 
-	</body>
-	<script>
-		var seconds = 6;
-		function countdown() {
-			seconds = seconds - 1;
-			if (seconds <0) {
-			   window.location = "https://devacsh.wordpress.com";
-			} else {
-			//console.log(seconds);
-				document.getElementById("countdown").innerHTML = seconds;
-				window.setTimeout("countdown()", 1000);
-			}
-		}
-		countdown();
-	</script>
+
+    <section class="py-5" >
+      <div class="container">
+        <div class="card">
+          <a class="github-button" href="https://github.com/devashishg" aria-label="Follow @devashishg on GitHub">Follow @devashishg</a>
+          <div class="calendar">
+                Loading the data just for you.
+          </div>
+        </div>
+        <script>
+          GitHubCalendar(".calendar", "devashishg");
+        </script>
+      </div>
+      <div class="container card" style= "margin-top:30px">
+        <!-- <div class="row TitleContact" align="center">
+          Skill Set
+        </div> -->
+        <div id="chart_div"></div>
+      </div>
+    </section>
+
+
+
+
+    <section class="py-5" id="contact">
+      <div class="container-fluid card" style="background:#ff6666">
+        <br/><hr width="70%" color="white" style="height:2px" NOSHADE>
+        <div class="row " align="center">
+
+          <div class="col-sm-8 text-center" id="contact">
+            <span class=" TitleContact">Contact Details</span>
+          </div>
+        </div>
+        <div class="row" align="center">
+          <div class="col-sm text-center contactDetails " style="font-family:'Arya',sans-serif">
+            If you just want to say Hello, or wanna collebrate and build some cool stuff<br/>
+             than, Please contact me. I will love to work.
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm text-center contact">
+            <div class="log">
+              Let's Talk<i class="material-icons">call</i>
+            </div>
+            <a href="tel:+91-739-872-8132" style="text-decoration:none"   class="myButton"> +91 739 872 8132</a>
+          </div>
+          <div class="col-sm text-center contact">
+            <div class="log">
+              You can shoot a mail <i class="material-icons" >email</i> also
+            </div>
+            <a href="mailto:iamdevashishgupta@yahoo.com" style="text-decoration:none"   class="myButton">iamdevashishgupta@yahoo.com</a>
+          </div>
+          <div class="col-sm text-center contact">
+            <div class="log">
+              Web Blog <i class="material-icons">web</i>
+            </div>
+            <a href="https://devacsh.wordpress.com" style="text-decoration:none"   class="myButton">devacsh.wordpress.com</a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
