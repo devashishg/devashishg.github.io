@@ -24,7 +24,10 @@
   border-radius: 6px
 }
 
-
+a{
+  text-decoration: none;
+  color:#ffffff;
+}
 
 
 /*----------------------Github data------------------------*/
@@ -100,8 +103,8 @@ nav ul > li {
 
 .contactDetails{
   font-family: 'Arya', sans-serif;
-  font-size: 30px;
-  color: #34495E;
+  font-size: 25px;
+  color: white;
 }
 
 .contact{
@@ -117,10 +120,10 @@ nav ul > li {
   font-family: 'Arya', sans-serif;
   text-shadow: 2px 2px 4px #808080;
   font-size: 50px;
-  color: darkseagreen;
+  color: #cff9d9;
   display: inline-block;
   margin-top: -70px;
-  background-color: #ff6666;
+  background-color: #ff7575;
   padding: 10px;
 }
 
@@ -208,12 +211,8 @@ nav ul > li {
   margin: 10px;
   font-size: 18px;
   font-style: 'Arya' sans-serif;
+  text-shadow: 0px 2px 4px #808080;
 }
-
-
-
-
-
 
 
 
@@ -228,7 +227,7 @@ nav ul > li {
 	border:1px solid white;
 	display:inline-block;
 	cursor:pointer;
-	color:darkseagreen;
+	color:#cff9d9;
 	font-family:'Arya' sans-serif;
 	font-size:22px;
 	font-weight:bold;
@@ -237,10 +236,10 @@ nav ul > li {
 	text-shadow: 0 1px 5px #3d768a;
 }
 .myButton:hover {
-	background-color: white;
-  color:darkseagreen;
+	background-color:#3a7648;
+  color:#cff9d9;
   text-shadow: none;
-
+  border:1px solid #3a7648;
 }
 
 .myButton:active {

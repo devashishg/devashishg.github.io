@@ -103,7 +103,8 @@ function drawBasic() {
         ['Php', 25],
         ['SQL', 50],
         ['Android_Development', 60],
-        ['Data Structures/Algorithm', 55]
+        ['Data Structures/Algorithm', 55],
+        ['Node/Npm',25]
       ]);
 
       var options = {
