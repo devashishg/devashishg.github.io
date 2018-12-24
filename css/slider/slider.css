@@ -133,6 +133,11 @@ nav ul > li {
 }
 
 
+.extrapadd{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 #mySidenav a {
   position: absolute; /* Position them relative to the browser window */
   left: -100px; /* Position them outside of the screen */
@@ -269,7 +274,7 @@ nav ul > li {
     box-sizing:border-box;
     margin:45px;
     padding:10px;
-    border: 5px solid #cff9d9;
+
 }
 
 /* The wrapper for each item */
@@ -277,19 +282,22 @@ nav ul > li {
     /*margin:12px;
     box-shadow:0 0 6px rgba(0,0,0,0.3);*/
     display:block;
+    border: 5px solid #cff9d9;
+    width: fit-content;
     position: relative;
     overflow:hidden;
+    align-content: center;
+    padding: 10px;
 }
 
 /* If have the image layer */
 .rig-img {
     display:block;
-    width: 225px;
-    height: 225px;
-    border:none;
+    width: 250px;
+    height: 250px;
     transform:scale(1);
     transition:all 1s;
-    padding-left: 25px;
+    padding: 10px;
 }
 
 #rig li:hover .rig-img {
@@ -318,23 +326,21 @@ nav ul > li {
 /* If have captions */
 .rig-text {
     display:block;
-    padding:0 20px;
+    padding:0 10px;
     box-sizing:border-box;
     position:absolute;
-    left:0;
     width:100%;
     text-align:center;
     text-transform:capitalize;
     font-size:18px;
-    font-weight:bold;
     font-family: 'Arya', sans-serif;
     font-weight:normal!important;
-    top:20%;
+    top:10%;
     color:#3a7648;
     opacity:0;
     filter:alpha(opacity=0);/*For older IE*/
-    transform:translateY(-20px);
-    transition:all .3s;
+    transform:translateY(-60px);
+    transition:all .7s;
 }
 #rig li:hover .rig-text {
     transform:translateY(0px);
