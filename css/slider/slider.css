@@ -183,8 +183,7 @@ nav ul > li {
 }
 
 #myimg{
-  align-self: center;
-  vertical-align: middle;
+
 }
 
 .middle {
@@ -199,7 +198,10 @@ nav ul > li {
 
 .contain{
   vertical-align: middle;
-  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
 #myimg:hover .imaging {
@@ -215,7 +217,6 @@ nav ul > li {
   color: white;
   font-size: 16px;
   padding: 16px 32px;
-
 }
 
 .textAbout{
