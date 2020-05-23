@@ -95,17 +95,17 @@ function drawBasic() {
 
       var data = google.visualization.arrayToDataTable([
         ['Skill', 'Rating',],
-        ['Java', 70],
-        ['javascript/TypeScript', 25],
-        ['C/C++', 35],
-        ['Python3', 60],
-        ['Angular6', 20],
-        ['Php', 25],
-        ['SQL', 50],
-        ['Android_Development', 60],
+        ['Javascript/TypeScript', 60],
+        ['Java', 50],
+        ['C/C++', 30],
+        ['Python3', 30],
+        ['Angular8', 75],
+        ['Nodejs', 60],
+        ['MongoDB', 50],
+        ['Flutter/Dart', 60],
+        ['Native_Android', 60],
         ['Data Structures/Algorithm', 55],
-        ['Node/Npm',25],
-        ['Git',50]
+        ['Git',65],
       ]);
 
       var options = {

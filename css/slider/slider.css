@@ -167,24 +167,24 @@ nav ul > li {
 
 
 .imaging {
+
   opacity: 1;
   display: block;
-  width: 100%;
+  position:relative;
+  width: 300px;
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
-  border: 10px solid #145236;
+  border: 5px solid #145236;
   border-radius: 300px;
-  border-top-style: none;
+  border-top-style: solid;
   border-right-style: none;
   border-left-style: none;
   border-bottom-style: solid;
   align-self: center;
 }
 
-#myimg{
 
-}
 
 .middle {
   transition: .5s ease;
@@ -194,6 +194,7 @@ nav ul > li {
   -ms-transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
+  z-index: 10;
 }
 
 .contain{
