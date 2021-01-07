@@ -1,13 +1,12 @@
-
 .box {
   width: fit-content;
   background: #cff9d9;
   padding: 20px;
   text-align: center;
   font-weight: 500;
-  font-family: 'Arya', sans-serif;
+  font-family: "Arya", sans-serif;
   color: #3a7648;
-  position:relative;
+  position: relative;
   border-radius: 6px;
 }
 .box:before {
@@ -21,51 +20,50 @@
   border-bottom: 10px solid transparent;
   left: 1px;
   top: 68px;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
-a{
+a {
   text-decoration: none;
-  color:#ffffff;
+  color: #ffffff;
 }
-
 
 /*----------------------Github data------------------------*/
-.card {
+.card-git {
   /* Add shadows to create the "card" effect */
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   padding: 10px;
-  overflow: auto;
-
+  width: 700px;
 }
 
-.card:hover {
-  box-shadow: 0 4px 7px 0 rgba(0,0,0,0.2);
+.card-git:hover {
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
 }
 
-
-
-.main-text
-{
-    position: absolute;
-    top: 40%;
-    width: 96.66666666666666%;
-    color: #FFF;
-    font-family: 'Arya', sans-serif;
-    font-size: 70px;
-
+.main-text {
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  z-index: 0;
+  color: #fff;
+  font-family: "Arya", sans-serif;
+  font-size: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-
-.brandtitled{
-  font-family: 'Arya', sans-serif;
+.brandtitled {
+  font-family: "Arya", sans-serif;
   text-shadow: 2px 2px 4px #000000;
   font-size: 100%;
 }
 
 /*Color navbar*/
-#changeBg{
+#changeBg {
   background: rgba(58, 118, 70, 0);
   position: fixed;
   top: 0;
@@ -86,37 +84,32 @@ nav ul > li {
 }
 
 .carousel-caption {
-   position: absolute;
-   top:25%;
-   margin-left: 40%;
+  position: absolute;
+  top: 25%;
+  margin-left: 40%;
 }
 
-
-.typingStyle{
-  font-family: 'Arya', sans-serif;
+.typingStyle {
+  font-family: "Arya", sans-serif;
   text-shadow: 2px 2px 4px #808080;
   font-size: 30px;
-  padding :6px;
+  padding: 6px;
 }
 
-
-
-.contactDetails{
-  font-family: 'Arya', sans-serif;
+.contactDetails {
+  font-family: "Arya", sans-serif;
   font-size: 25px;
   color: white;
 }
 
-.contact{
+.contact {
   margin-top: 30px;
   padding: 20px;
-  font-family: 'Arya', sans-serif;
+  font-family: "Arya", sans-serif;
 }
 
-
-
-.titleContact{
-  font-family: 'Arya', sans-serif;
+.titleContact {
+  font-family: "Arya", sans-serif;
   text-shadow: 2px 2px 4px #808080;
   font-size: 50px;
   color: #cff9d9;
@@ -126,14 +119,13 @@ nav ul > li {
   padding: 10px;
 }
 
-.log{
-  color:white;
+.log {
+  color: white;
   font-size: 20px;
-  padding-top:-20px;
+  padding-top: -20px;
 }
 
-
-.extrapadd{
+.extrapadd {
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -148,7 +140,7 @@ nav ul > li {
   font-size: 25px; /* Increase font size */
   color: white; /* White text color */
   border-radius: 0 5px 5px 0;
-  font-family: 'Arya',sans-serif;/* Rounded corners on the top right and bottom right side */
+  font-family: "Arya", sans-serif; /* Rounded corners on the top right and bottom right side */
 }
 
 #mySidenav a:hover {
@@ -161,35 +153,29 @@ nav ul > li {
   background-color: #3a7648;
 }
 
-
-
 /* Photo */
 
-
 .imaging {
-
   opacity: 1;
   display: block;
-  position:relative;
+  position: relative;
   width: 300px;
   height: auto;
-  transition: .5s ease;
+  transition: 0.5s ease;
   backface-visibility: hidden;
-  border: 5px solid #145236;
-  border-radius: 300px;
-  border-top-style: solid;
-  border-right-style: none;
-  border-left-style: none;
+  border: 1px none #145236;
+  border-radius: 50%;
   border-bottom-style: solid;
   align-self: center;
 }
 
 
 
+
 .middle {
-  transition: .5s ease;
+  transition: 0.5s ease;
   opacity: 0;
-  position:absolute;
+  position: absolute;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   left: 50%;
@@ -197,7 +183,7 @@ nav ul > li {
   z-index: 10;
 }
 
-.contain{
+.contain {
   vertical-align: middle;
   margin-top: auto;
   margin-bottom: auto;
@@ -214,162 +200,151 @@ nav ul > li {
 }
 
 .text {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   font-size: 16px;
   padding: 16px 32px;
 }
 
-.textAbout{
+.textAbout {
   margin: 10px;
   font-size: 18px;
-  font-style: 'Arya' sans-serif;
+  font-style: "Arya" sans-serif;
   text-shadow: 0px 2px 4px #808080;
 }
-
-
-
 
 /* buttons */
 
 .myButton {
-	background-color:transparent;
-	-moz-border-radius:26px;
-	-webkit-border-radius:26px;
-	border-radius:26px;
-	border:1px solid white;
-	display:inline-block;
-	cursor:pointer;
-	color:#cff9d9;
-	font-family:'Arya' sans-serif;
-	font-size:22px;
-	font-weight:bold;
-	padding:12px 24px;
-	text-decoration:none;
-	text-shadow: 0 1px 5px #3d768a;
+  background-color: transparent;
+  -moz-border-radius: 26px;
+  -webkit-border-radius: 26px;
+  border-radius: 26px;
+  border: 1px solid white;
+  display: inline-block;
+  cursor: pointer;
+  color: #cff9d9;
+  font-family: "Arya" sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 12px 24px;
+  text-decoration: none;
+  text-shadow: 0 1px 5px #3d768a;
 }
 .myButton:hover {
-	background-color:#3a7648;
-  color:#cff9d9;
+  background-color: #3a7648;
+  color: #cff9d9;
   text-shadow: none;
-  border:1px solid #3a7648;
+  border: 1px solid #3a7648;
 }
 
 .myButton:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
-
-
-
-
-
-
-
 
 #rig {
-    max-width:1150px;
-    margin:0 0; /*center aligned*/
-    font-size:0; /* Remember to change it back to normal font size if have captions */
-    list-style:none;
-    background-color:#fff;
-    padding: 20px;
+  max-width: 1150px;
+  margin: 0 0; /*center aligned*/
+  font-size: 0; /* Remember to change it back to normal font size if have captions */
+  list-style: none;
+  background-color: #fff;
+  padding: 20px;
 }
 #rig li {
-    display: inline-block;
-    *display:inline;/*for IE6 - IE7*/
-    width:25%;
-    vertical-align:middle;
-    box-sizing:border-box;
-    margin:45px;
-    padding:10px;
-
+  display: inline-block;
+  *display: inline; /*for IE6 - IE7*/
+  width: 25%;
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin: 45px;
+  padding: 10px;
 }
 
 /* The wrapper for each item */
 .rig-cell {
-    /*margin:12px;
+  /*margin:12px;
     box-shadow:0 0 6px rgba(0,0,0,0.3);*/
-    display:block;
-    border: 5px solid #cff9d9;
-    width: fit-content;
-    position: relative;
-    overflow:hidden;
-    align-content: center;
-    padding: 10px;
+  display: block;
+  border: 5px solid #cff9d9;
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+  align-content: center;
+  padding: 10px;
 }
 
 /* If have the image layer */
 .rig-img {
-    display:block;
-    width: 250px;
-    height: 250px;
-    transform:scale(1);
-    transition:all 1s;
-    padding: 10px;
+  display: block;
+  width: 250px;
+  height: 250px;
+  transform: scale(1);
+  transition: all 1s;
+  padding: 10px;
 }
 
-#rig li:hover .rig-img {
-    transform:scale(1.05);
+a.rig-cell:hover .rig-img {
+  transform: scale(1.05);
 }
 
 /* If have the overlay layer */
 .rig-overlay {
-    position: absolute;
-    display:block;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    background: #ffffff url(img/link.png) no-repeat center 20%;
-    background-size:50px 70px;
-    opacity:0;
-    filter:alpha(opacity=0);/*For IE6 - IE8*/
-    transition:all 0.6s;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background: #ffffff  center 20%;
+  background-size: 50px 70px;
+  opacity: 0;
+  filter: alpha(opacity=0); /*For IE6 - IE8*/
+  transition: all 0.6s;
 }
-#rig li:hover .rig-overlay {
-    opacity:0.8;
+a.rig-cell:hover .rig-overlay {
+  opacity: 0.8;
 }
 
 /* If have captions */
 .rig-text {
-    display:block;
-    padding:0 10px;
-    box-sizing:border-box;
-    position:absolute;
-    width:100%;
-    text-align:center;
-    text-transform:capitalize;
-    font-size:18px;
-    font-family: 'Arya', sans-serif;
-    font-weight:normal!important;
-    top:10%;
-    color:#3a7648;
-    opacity:0;
-    filter:alpha(opacity=0);/*For older IE*/
-    transform:translateY(-60px);
-    transition:all .7s;
+  display: block;
+  padding: 0 10px;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-family: "Arya", sans-serif;
+  font-weight: normal !important;
+  top: 10%;
+  color: #3a7648;
+  opacity: 0;
+  filter: alpha(opacity=0); /*For older IE*/
+  transform: translateY(-60px);
+  transition: all 0.7s;
 }
-#rig li:hover .rig-text {
-    transform:translateY(0px);
-    opacity:0.9;
+a.rig-cell:hover .rig-text {
+  transform: translateY(0px);
+  opacity: 0.9;
 }
 
 @media (max-width: 9000px) {
-    #rig li {
-        width:25%;
-    }
+  #rig li {
+    width: 25%;
+  }
 }
 
 @media (max-width: 700px) {
-    #rig li {
-        width:33.33%;
-    }
+  #rig li {
+    width: 33.33%;
+  }
 }
 
 @media (max-width: 550px) {
-    #rig li {
-        width:50%;
-    }
+  #rig li {
+    width: 50%;
+  }
 }

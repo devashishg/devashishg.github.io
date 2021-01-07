@@ -1,29 +1,40 @@
-.name
-{
-	font-size: 50px;
-	font-family: 'Yatra One', cursive;
-	color: red;
+
+.flex-center {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
-#countdown, #bg
-{
-	font-size: 35px;
-	font-family: 'Yatra One', cursive;
-	color: black;
+.flex-justify-center {
+	justify-content: space-evenly;
 }
 
-
-
-.titled{
-	font-size: 35px;
-	padding: 40px;
-	padding-top: 60px;
-	color: gray;
+.flex-column {
+	flex-direction: column;
 }
 
-.titlee{
-	font-size: 25px;
-	padding: 40px;
-	padding-top: 60px;
-	color: gray;
+.chart-container {
+	width: 100% !important;
+	overflow-x: auto !important;
+	overflow-y: hidden !important;
+}
+
+.c-pointer {
+	cursor: pointer;
+}
+
+.contact {
+	border-radius:50px;
+	white-space: nowrap;
+	border: none;
+}
+
+.more-link {
+	color: #4caf50 !important;
+}
+
+.read-more, .post-title  {
+	color: #4caf50 !important;
+	font-size: 16px;
+	text-decoration: none !important;
 }
