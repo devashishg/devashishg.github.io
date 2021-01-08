@@ -6,7 +6,7 @@
 }
 
 .flex-justify-center {
-	justify-content: space-evenly;
+	justify-content:center;
 }
 
 .flex-column {
@@ -37,4 +37,9 @@
 	color: #4caf50 !important;
 	font-size: 16px;
 	text-decoration: none !important;
+}
+
+.footer-icons {
+	text-decoration:none !important; 
+	color:#303030;
 }

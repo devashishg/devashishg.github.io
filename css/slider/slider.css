@@ -111,11 +111,11 @@ nav ul > li {
 .titleContact {
   font-family: "Arya", sans-serif;
   text-shadow: 2px 2px 4px #808080;
-  font-size: 50px;
+  font-size: 40px;
   color: #cff9d9;
   display: inline-block;
   margin-top: -40px;
-  background-color: #ff7575;
+  background-color: #495057 ;
   padding: 10px;
 }
 
@@ -263,10 +263,11 @@ nav ul > li {
 
 /* The wrapper for each item */
 .rig-cell {
-  /*margin:12px;
-    box-shadow:0 0 6px rgba(0,0,0,0.3);*/
+  margin: 15px;
+  box-shadow:0 0 6px rgba(0,0,0,0.3);
   display: block;
-  border: 5px solid #cff9d9;
+  border: 1px solid #cff9d9;
+  border-radius: 5%;
   width: fit-content;
   position: relative;
   overflow: hidden;
@@ -277,8 +278,8 @@ nav ul > li {
 /* If have the image layer */
 .rig-img {
   display: block;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   transform: scale(1);
   transition: all 1s;
   padding: 10px;
@@ -310,10 +311,9 @@ a.rig-cell:hover .rig-overlay {
 /* If have captions */
 .rig-text {
   display: block;
-  padding: 0 10px;
   box-sizing: border-box;
   position: absolute;
-  width: 100%;
+  width: 90%;
   text-align: center;
   text-transform: capitalize;
   font-size: 18px;
