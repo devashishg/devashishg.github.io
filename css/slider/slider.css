@@ -23,6 +23,32 @@
   border-radius: 6px;
 }
 
+.box-right {
+  width: fit-content;
+  background: #cff9d9;
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Arya", sans-serif;
+  color: #3a7648;
+  position: relative;
+  border-radius: 6px;
+}
+
+.box-right:after {
+  content: "";
+  width: 3px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 25px solid #cff9d9;
+  border-bottom: 10px solid transparent;
+  right: 1px;
+  top: 68px;
+  border-radius: 6px;
+}
+
 a {
   text-decoration: none;
   color: #ffffff;
@@ -87,6 +113,12 @@ nav ul > li {
   position: absolute;
   top: 25%;
   margin-left: 40%;
+}
+
+.carousel-caption-left {
+  position: absolute;
+  top: 28%;
+  margin-left: 20%;
 }
 
 .typingStyle {
