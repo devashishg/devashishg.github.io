@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Fast</title>
+    <style>
+        .results {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: rgb(245 245 245);
+            border-radius: 32px;
+            margin-top: 10px;
+            margin: 10px 20px;
+        }
+
+
+        input[type="reset"i] {
+            padding: 5px 15px;
+            font-size: 24px;
+            background-color: rgba(6, 8, 17, 0.822);
+            color: white;
+            border: none;
+            margin: 1px;
+            border-radius: 5px;
+        }
+
+        .key {
+            padding: 10px;
+            background-color: rgba(6, 8, 17, 0.822);
+            border: 2px cadetblue solid;
+            color: white;
+            display: inline-flex;
+            min-width: 20px;
+            justify-content: center;
+            box-shadow: 0 5px 5px #b6b6b6;
+            text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+        }
+        
+        .key:hover {
+            box-shadow: none;
+            animation: name 1s ease 0s 1 alternate forwards;
+            width: 12px;
+            height: 15px;
+            justify-content: center;
+            animation-name: none;
+            border: 2px rgb(150, 125, 125) solid;
+            border-radius: 5px;
+            align-items: center;
+        }
+
+        .letter {
+            text-align: center;
+            font-size: 24px;
+            padding: 20px;
+            background-color: #dadada;
+            border-radius: 20px;
+            width: 350px;
+        }
+
+        .element {
+            display: flex;
+            margin: 10px 32px;
+            align-items: center;
+            flex-direction: column;
+            height: 90px;
+            justify-content: space-evenly;
+            cursor: pointer;
+        }
+
+        .input-field {
+            padding: 5px 10px;
+            font-size: 24px;
+            outline: none;
+            width: 300px;
+            margin-right: 1px;
+        }
+
+        .reset {
+            margin-left: auto !important;
+            margin-top: 1px;
+            margin-bottom: 1px;
+        }
+
+        .input-area {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 10px 20px;
+            color: darkslategrey;
+            font-size: 32px;
+        }
+
+        .title {
+            margin: 10px;
+            font-size: 35px;
+            color: #206d31;
+            font-weight: bolder;
+            width: 100%;
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="flex">
+        <div class="input-area">
+            Let's test your typing speed.
+        </div>
+        <em>Press enter to reset at any point of time.</em>
+        <div id="letter" class="letter"></div>
+        <div class="input-area">
+            <input class="input-field" placeholder="Follow the alphabets shown above" type="text" id="typeHere"><input
+                type="reset" id="reset" value="reset" class="reset">
+        </div>
+        <div>
+            <input type="checkbox" name="Shuffle" id="shuffle" />
+            <label for="Shuffle"> Shuffle & Reset </label>
+        </div>
+    </div>
+    <div id="results" class="results"></div>
+    <div id="info"></div>
+
+</body>
+
+<script src="./js/typo.js"></script>
+
+</html>
