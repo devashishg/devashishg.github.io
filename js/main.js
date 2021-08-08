@@ -52,6 +52,7 @@ window.onload = function () {
   var css = document.createElement("style");
   css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #cff9d9}";
   document.body.appendChild(css);
+  loadStackOverFlow();
 };
 
 
@@ -88,6 +89,28 @@ function drawBasic() {
   var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
 
   chart.draw(data, options);
+}
+
+async function loadStackOverFlow  () {
+  const element = document.getElementById('stk-oflw');
+  const res = await fetch('https://api.stackexchange.com/2.3/users/8504438?site=stackoverflow');
+  const data = (await res.json()).items[0];
+  let layout = `<img src="${data.profile_image}" width="15px" class="mx-2"/>${data.reputation}`;
+  let bdgs = data.badge_counts;
+  if(bdgs.gold >0) {
+    layout+=`<span class="gold mx-1">● ${bdgs.gold}</span>`;
+  }
+  if(bdgs.silver >0) {
+    layout+=`<span class="silver mx-1">● ${bdgs.silver}</span>`;
+  }
+  if(bdgs.bronze > 0) {
+    layout+=`<span class="bronze mx-1">● ${bdgs.bronze}</span>`;
+  }
+  const ele = document.createElement('span');
+  ele.innerHTML = layout;
+  element.appendChild(ele);
+
+  console.log(data);
 }
 
 

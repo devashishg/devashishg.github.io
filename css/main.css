@@ -48,6 +48,28 @@
 	 right: 20px;
 }
 
+.bronze {
+	color: #d19b71;
+}
+.gold {
+	color: gold;
+}
+.silver {
+	color: silver;
+}
+
+.stk-oflw {
+	display: flex;
+	text-decoration: none;
+	margin-bottom: 7px;
+	white-space: nowrap;
+	font-size: 11px;
+    font-weight: bold;
+}
+.stk-oflw > i {
+	font-size: 15px;
+}
+
 .greetings {
 	font-family:'Arya',sans-serif;padding:10px;
 }
