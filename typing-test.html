@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Type Fast</title>
     <style>
+        html {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .w-100 {
+            width: 100% !important;
+        }
+
         .results {
             display: flex;
             align-items: center;
@@ -20,12 +28,11 @@
 
 
         input[type="reset"i] {
-            padding: 5px 15px;
-            font-size: 24px;
+            padding: 10px 15px;
+            font-size: 16px;
             background-color: rgba(6, 8, 17, 0.822);
             color: white;
             border: none;
-            margin: 1px;
             border-radius: 5px;
         }
 
@@ -40,7 +47,7 @@
             box-shadow: 0 5px 5px #b6b6b6;
             text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
         }
-        
+
         .key:hover {
             box-shadow: none;
             animation: name 1s ease 0s 1 alternate forwards;
@@ -57,9 +64,11 @@
             text-align: center;
             font-size: 24px;
             padding: 20px;
-            background-color: #dadada;
+            background-color: rgba(255, 255, 255, .2);
             border-radius: 20px;
             width: 350px;
+            box-shadow: inset 0 0 9px 0px #b6b6b6;
+            opacity: 0.6;
         }
 
         .element {
@@ -77,13 +86,16 @@
             font-size: 24px;
             outline: none;
             width: 300px;
-            margin-right: 1px;
+            font: 100 14px sans;
+            border: 0;
+        }
+
+        .display-none {
+            display: none;
         }
 
         .reset {
             margin-left: auto !important;
-            margin-top: 1px;
-            margin-bottom: 1px;
         }
 
         .input-area {
@@ -91,46 +103,68 @@
             justify-content: center;
             flex-wrap: wrap;
             margin: 10px 20px;
-            color: darkslategrey;
-            font-size: 32px;
+            font-size: 28px;
+            border-radius: 0 7px 7px 0;
+            border: 1px black solid;
         }
 
         .title {
             margin: 10px;
-            font-size: 35px;
+            font-size: 28px;
             color: #206d31;
             font-weight: bolder;
-            width: 100%;
+            width: max-content;
             text-align: center;
         }
+        .best {
+            padding-top: 4px;
+            font-size: 16px;
+            text-align: end;
+            justify-content: right;
+        }
 
-        .flex {
+        .flex-column,
+        .flex-row {
             display: flex;
-            justify-content: center;
             align-items: center;
+        }
+
+        .flex-column {
+            justify-content: center;
             flex-direction: column;
+        }
+
+        .flex-row {
+            flex-direction: row;
+        }
+
+        .m-4 {
+            margin: 0 16px;
         }
     </style>
 
 </head>
 
 <body>
-    <div class="flex">
-        <div class="input-area">
+    <div class="flex-column">
+        <div class="title">
             Let's test your typing speed.
+            <div id="best" class="best p-4 border-top"></div>
         </div>
         <em>Press enter to reset at any point of time.</em>
         <div id="letter" class="letter"></div>
         <div class="input-area">
-            <input class="input-field" placeholder="Follow the alphabets shown above" type="text" id="typeHere"><input
-                type="reset" id="reset" value="reset" class="reset">
+            <input class="input-field" placeholder="Follow the alphabets shown above" type="text" id="typeHere">
+            <input type="reset" id="reset" value="Reset" class="reset">
         </div>
-        <div>
+        <div class="flex-row">
             <input type="checkbox" name="Shuffle" id="shuffle" />
             <label for="Shuffle"> Shuffle & Reset </label>
         </div>
     </div>
     <div id="results" class="results"></div>
+    <div class="warning">
+    </div>
     <div id="info"></div>
 
 </body>
