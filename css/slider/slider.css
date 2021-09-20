@@ -316,7 +316,7 @@ nav ul > li {
 
 /* The wrapper for each item */
 .rig-cell {
-  margin: 15px;
+  margin: 25px;
   box-shadow:0 0 6px rgba(0,0,0,0.3);
   display: block;
   border: 1px solid #cff9d9;

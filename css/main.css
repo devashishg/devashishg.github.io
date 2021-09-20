@@ -43,10 +43,6 @@
 	font-size:40px;
 }
 
-.twitter-icon {
-	position: absolute;
-	 right: 20px;
-}
 
 .bronze {
 	color: #d19b71;
@@ -65,6 +61,8 @@
 	white-space: nowrap;
 	font-size: 11px;
     font-weight: bold;
+	height:22px;
+	align-items: center;
 }
 .stk-oflw > i {
 	font-size: 15px;
