@@ -1,0 +1,17 @@
+[
+  {
+    "role": "Senior Software Engineer · M-League(Mobile Premier League)",
+    "org": "Bengaluru, India · 09/2022 – Present",
+    "meta": "Tournaments · Leaderboards · Built games like Rummy, CallBreak, WPS · Socket.IO · 50K+ CCU · 1.3M PDAU · TypeScript · Node.js · Kafka · Redis · Kubernetes"
+  },
+  {
+    "role": "Software Engineer · EPAM Systems",
+    "org": "Hyderabad, India · 09/2019 – 09/2021",
+    "meta": "Full-stack delivery · Express.js · MongoDB · Angular · REST APIs · Transactions · E2E automation"
+  },
+  {
+    "role": "Software Engineer · ZS Associates",
+    "org": "Pune, India · 02/2019 – 09/2019",
+    "meta": "ETL · AWS Redshift/RDS · Pipeline QA · Test strategy & execution"
+  }
+]

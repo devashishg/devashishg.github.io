@@ -1,383 +1,106 @@
-<!DOCTYPE Html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:url" content="https://devashishg.github.io" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Devashish Gupta" />
-  <meta property="og:description" content="Devashish Gupta personal profile" />
-  <meta property="og:image" content="https://devashishg.github.io/media/a.png" />
-
-  <title>Home</title>
-
-  <link rel="icon" type="image/png" href="media/favicon-32x32.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="media/favicon-16x16.png" sizes="16x16" />
-
-  <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link href="css/slider/slider.css" type="text/css" rel="stylesheet">
-  <link href="css/main.css" type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
-
-  <!-- icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Arya|Asar|Glegoo&amp;subset=devanagari" rel="stylesheet">
-
-  <!-- Github calender-->
-  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
-  <!-- <link rel="stylesheet" href="css/github.css" /> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Devashish Gupta — Software Engineer building distributed systems and scalable products.">
+  <title>Devashish Gupta | Orbit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/orbit.css">
 </head>
 
 <body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="changeBg">
-    <div class="container">
-      <a class="navbar-brand brandtitled" href="#">
-        <h1><b>&ltदेवाशीष/&gt</b></h1>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto flex-center">
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#aboutme">About</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" target="_blank" href="media/devashish_gupta.pdf">Resume</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#work">Work</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a href="https://twitter.com/@imdevacsh" class="twitter-follow-button" data-show-count="false">Follow
-              @imdevacsh</a>
-          </li>
-
-        </ul>
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <div class="page-shell">
+    <div class="top-bar">
+      <div class="brand-mark">&lt;देवाशीष/&gt;</div>
+      <div class="brand-actions">
+        <a class="btn ghost" href="#projects">Work</a>
+        <a class="btn ghost" href="#contact">Contact</a>
       </div>
     </div>
-  </nav>
-
-  <header id="nav1">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-
-
-      <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active" style="background-image: url('media/g3.png')">
-          <div class="carousel-caption d-none d-md-block">
-            <div class="chat">
-              <h3 class="box">Hey, It's me</h3>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item" style="background-image: url('media/g2.png')">
-          <div class="carousel-caption d-none d-md-block">
-            <div class="chat">
-              <h3 class="box">How you are doing?</h3>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item" style="background-image: url('media/g1.png')">
-          <div class="carousel-caption-left d-none d-md-block">
-            <div class="chat">
-              <h3 class="box-right">Pleased to have you here. 🙏🏻</h3>
-            </div>
-          </div>
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Hi There! I'm </p>
+        <h1>Devashish Gupta</h1>
+        <p class="subtitle">Software Engineer · Distributed Systems · Scalable Products</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View Work</a>
+          <a class="btn ghost" href="#contact">Contact Me</a>
         </div>
       </div>
-    </div>
-    <div class="main-text hidden-xs">
-      <div class="col-md-12 text-center brandtitled">
-        Devashish<br />Gupta
-      </div>
-      <div class="typingStyle text-center">
-        I am <span style="text-decoration:none" class="typewrite" data-period="2000"
-          data-type='[ "Software engineer.","a Developer.", "a Coder.", "a freelancer.", "a Blogger."]'>
-          <span class="wrap"></span>
-        </span>
-      </div>
+    </header>
 
-    </div>
-  </header>
+    <main>
+      <section id="projects" class="section">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p>Systems, services, and tooling aligned to resilient, observable platforms.</p>
+        </div>
+        <div class="projects-grid" id="projects-grid"></div>
+      </section>
 
+      <section id="skills" class="section">
+        <div class="section-header">
+          <h2>Skills</h2>
+          <p>Practical experience across services, data, and runtime layers.</p>
+        </div>
+        <div class="skills-grid" id="skills-grid"></div>
+      </section>
 
-  <div id="mySidenav" class="sidenav">
-    <a href="./media/devashish_gupta.pdf" style="text-decoration:none" id="about" target="_blank">Resume&nbsp; <i
-        class="material-icons">cloud_download</i></a>
-  </div>
+      <section id="experience" class="section">
+        <div class="section-header">
+          <h2>Experience</h2>
+          <p>Shipping resilient products with distributed, cross-functional teams.</p>
+        </div>
+        <div class="experience-list" id="experience-list"></div>
+      </section>
 
-  <div class="float">
-    <a href="./typing-test.html" target="_blank"><i class="material-icons">keyboard</i></a>
-  </div>
-
-
-  <section class="py-4" id="aboutme">
-    <div class="container-fluid">
-      <div class="card px-1">
-        <div class="row">
-          <div class="col-lg-3 my-auto">
-            <div id="myimg" class="my-2">
-              <div class="middle flex-center flex-column" style="font-family: 'Arya', sans-serif; font-size:20px">Hey,
-                I'm Devashish.
-                <button class="text c-pointer contact"><a style="text-decoration: none; color:#ffffff"
-                    href="#contact">Wanna Contact</a></button>
+      <section id="contact" class="section contact">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Prefer thoughtful, systems-minded collaboration. Let’s build reliable products.</p>
+        </div>
+        <div class="contact-actions" id="contact-actions"></div>
+        <div class="badge-row">
+          <div class="stack-badge-card">
+            <a class="stack-badge" href="https://stackoverflow.com/users/8504438/devas" target="_blank" rel="noreferrer">
+              <span class="stack-icon">SO</span>
+              <div class="stack-text">
+                <strong>Stack Overflow</strong>
+                <span class="stack-meta">Reputation: <span data-stack="rep">•••</span></span>
               </div>
-              <img src="media/a.png" alt="Avatar" class="imaging mx-auto">
-            </div>
+              <span class="stack-medals">
+                <span class="medal gold" data-stack="gold" aria-label="Gold badges">-</span>
+                <span class="medal silver" data-stack="silver" aria-label="Silver badges">-</span>
+                <span class="medal bronze" data-stack="bronze" aria-label="Bronze badges">-</span>
+              </span>
+            </a>
           </div>
-          <div class="col-lg-9 my-auto">
-            <div class="typingStyle">
-              मेरे बारे में...<br />
-              About me...
-            </div>
-            <div class="textAbout">
-              I am Devashish Gupta, a Software engineer working at <span class="text-danger">MPL</span> Sports, an IT
-              graduate from K.I.E.T. Ghaziabad,
-              an enthusiast for working on different project, building cool stuff and writing code.I
-              have written codes in <span style="text-decoration:none;color:#086fd6 ;" class="typewrite"
-                data-period="2000" data-type='[ "C/C++.", "Java.", "Python.","JavaScript.","TypeScript.","Dart."]'>
-            </div>
-            <div class="textAbout mt-2">
-              I am enthusiast for gadgets/mobile-devices, writes blog on mobile technologies.
-              Apart from tech I enjoy listening to music, playing outdoor games like Cricket, volleyball, badminton.
-
-            </div>
+          <div class="stack-badge-card">
+            <a class="stack-badge gh-badge" href="https://github.com/devashishg" target="_blank" rel="noreferrer">
+              <span class="stack-icon gh-icon">GH</span>
+              <div class="stack-text">
+                <strong>GitHub</strong>
+                <span class="stack-meta">Public repos: <span data-github="repos">•••</span></span>
+              </div>
+            </a>
           </div>
-
         </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-note">
+        No © issues, Built with HTML5/CSS4. Powered by Codex.
       </div>
-    </div>
-  </section>
-
-
-  <section id="work">
-    <div class="container-fluid">
-      <div class="row flex-justify-center px-5">
-        <div id="stk-oflw" class="btn-light border c-pointer stk-oflw px-2 py-1">
-          <i class="fa fa-stack-overflow" aria-hidden="true"></i>
-        </div>
-        <div>
-          <a class="github-button" href="https://github.com/devashishg" aria-label="Follow @devashishg on GitHub">Follow
-            @devashishg</a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="card-git calendar">
-          Loading the data just for you.
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="container-fluid mt-2">
-      <div class="card mt-5 py-2">
-        <h1 class="card-title py-2"> Projects</h1>
-        <div class="flex-center flex-justify-center">
-          <a class="rig-cell my-3" href="#">
-            <img class="rig-img" src="media/projects/SP.jpg" />
-            <span class="rig-overlay"></span>
-            <span class="rig-text"><b><u>Smart Peon</u></b><br /><br />A Bluetooth module based School ring-bell
-              Application, to schedule bell.</span>
-          </a>
-          <a class="rig-cell my-3" target="_blank"
-            href="https://drive.google.com/file/d/1LWrrqQF_J3E0_7vaz8cWBYoP8rblj-vO/view?usp=drivesdk">
-            <img class="rig-img" src="media/projects/Check_in.jpg" />
-            <span class="rig-overlay"></span>
-            <span class="rig-text"><u><b>Check-in Application</b></u><br /><br />Flutter check-in app for users,
-              check-in to any location and save the data locally.</span>
-          </a>
-          <a class="rig-cell my-3" href="#">
-            <img class="rig-img" src="media/projects/smartphone.png" />
-            <span class="rig-overlay"></span>
-            <span class="rig-text"><b><u>VOC</u></b><br /><br />
-              'Voice of customer' Android application to capture banking client feedback.</span>
-          </a>
-          <a class="rig-cell my-3" target="_blank" href="http://kanban2020.herokuapp.com/">
-            <img class="rig-img" src="media/projects/kanban.png" />
-            <span class="rig-overlay"></span>
-            <span class="rig-text"><u><b>KANBAN Application</b></u><br /><br />
-              A web app provides functionity to manage project task, workflow and task assignment. </span>
-          </a>
-          <a class="rig-cell my-3" target="_blank" href="https://github.com/devashishg/TicTacToe">
-            <img class="rig-img" src="media/projects/ttt.jpg" />
-            <span class="rig-overlay"></span>
-            <span class="rig-text"><u><b>Tic Tac Toe</b></u><br /><br />Java based Tic Tac Toe game with console based
-              user interface. </span>
-          </a>
-          <a class="rig-cell my-3" target="_blank" href="http://develop-chatty.herokuapp.com/#/home">
-            <img class="rig-img" src="media/projects/groupchat.png" />
-            <span class="rig-overlay"></span>
-            <span class="rig-text"><u><b>Chatty</b></u><br /><br />Web based group chat application based on Angular,
-              Express, Graphql.
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid mt-2 py-2">
-      <h1 class="card-title py-2"> Skills </h1>
-      <div class="chart-container">
-        <div class="flex-center justify-content-center f-8">
-          <i class="devicon-cplusplus-line colored m-2 p-2 border-danger" title="C++"></i>
-          <i class="devicon-java-plain-wordmark colored m-2 p-2 border-danger" title="Java"></i>
-          <i class="devicon-android-plain colored m-2 p-2 border-danger" title="Android"></i>
-          <i class="devicon-flutter-plain colored m-2 p-2 border-danger" title="Flutter"></i>
-          <i class="devicon-javascript-plain colored m-2 p-2 border-danger" title="Javascript"></i>
-          <i class="devicon-babel-plain colored m-2 p-2 border-danger" title="Babel"></i>
-          <i class="devicon-webpack-plain-wordmark colored m-2 p-2 border-danger" title="Webpack"></i>
-          <i class="devicon-angularjs-plain colored m-2 p-2 border-danger" title="Angular2+"></i>
-          <i class="devicon-typescript-plain colored m-2 p-2 border-danger" title="Typescript"></i>
-          <i class="devicon-nodejs-plain-wordmark colored m-2 p-2 border-danger" title="Node.js"></i>
-          <i class="devicon-express-original-wordmark colored m-2 p-2 border-danger" title="Express.js"></i>
-          <i class="devicon-graphql-plain-wordmark colored m-2 p-2 border-danger" title="GraphQL"></i>
-          <i class="devicon-redis-plain-wordmark colored m-2 p-2 border-danger" title="Redis"></i>
-          <i class="devicon-socketio-original colored m-2 p-2 border-danger" title="Socketio"></i>
-          <i class="devicon-mongodb-plain-wordmark colored m-2 p-2 border-danger" title="Mongo DB"></i>
-          <i class="devicon-mysql-plain-wordmark colored m-2 p-2 border-danger" title="MySQL"></i>
-          <i class="devicon-npm-original-wordmark colored m-2 p-2 border-danger" title="Node package manager"></i>
-          <i class="devicon-yarn-plain-wordmark colored m-2 p-2 border-danger" title="Yarn"></i>
-          <i class="devicon-css3-plain-wordmark colored m-2 p-2 border-danger" title="CSS"></i>
-          <i class="devicon-git-plain-wordmark colored m-2 p-2 border-danger" title="Git version control"></i>
-          <i class="devicon-docker-plain-wordmark colored m-2 p-2 border-danger" title="Docker Containers"></i>
-          <i class="devicon-linux-plain colored m-2 p-2 border-danger" title="Linux"></i>
-          <i class="devicon-ubuntu-plain colored m-2 p-2 border-danger" title="Ubuntu"></i>
-          <i class="devicon-jenkins-plain m-2 p-2 border-danger" title="Jenkins"></i>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid mt-2">
-      <div class="card p-2 mt-5">
-        <h1 class="card-title py-2"> Blog </h1>
-        <!-- https://medium.com/feed/@devacsh-->
-        <div id="retainable-rss-embed" data-rss="https://medium.com/feed/@devacsh" data-maxcols="3" data-layout="grid"
-          data-poststyle="external" data-buttonclass="read-more contact" data-offset="-100"></div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <section class="py-1" id="contact">
-    <div class="container-fluid card" style="background:#495057 ;opacity:50%;">
-      <br /><br />
-      <hr width="70%" color="white" style="height:2px;margin-bottom:-10px;" NOSHADE>
-      <div class="row">
-        <div class="col-sm-8 text-center" id="contact">
-          <span class="titleContact">I'm easy to reach</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm text-center contactDetails greetings">
-          If you just want to say Hello, or wanna collaborate and build some cool stuff then,<br /> Please contact me.
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm text-center contact">
-          <div class="log">
-            Let's Talk<i class="material-icons">call</i>
-          </div>
-          <a href="tel:+91-739-872-8132" class="myButton no-deco"> +91 739 872 8132</a>
-        </div>
-        <div class="col-sm text-center contact">
-          <div class="log">
-            You can drop an e-mail <i class="material-icons">email</i> as well
-          </div>
-          <a href="mailto:imdevashishgupta@yahoo.com" class="myButton no-deco">imdevashishgupta@yahoo.com</a>
-        </div>
-        <div class="col-sm text-center contact">
-          <div class="log">
-            Web Blog <i class="material-icons">web</i>
-          </div>
-          <a href="https://devacsh.wordpress.com" class="myButton no-deco">devacsh.wordpress.com</a>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="py-1" style="background:#cff9d9;">
-    <div class="container">
-      <div class="row">
-        <div class="col col-lg-10 pt-5 pb-3 f-4">
-          <a href="https://www.quora.com/profile/Devashish-Gupta-7" class="footer-icons" target="_blank"><i
-              class="fa fa-quora" aria-hidden="true"></i></a>&nbsp;
-          <a href="https://www.instagram.com/imdevacsh" target="_blank" class="footer-icons"><i class="fa fa-instagram"
-              aria-hidden="true"> </i></a>&nbsp;
-          <a href="https://facebook.com/imdevacsh" target="_blank" class="footer-icons"><i class="fa fa-facebook"
-              aria-hidden="true"></i></a>&nbsp;
-          <a href="https://github.com/devashishg" target="_blank" class="footer-icons"><i class="fa fa-github"
-              aria-hidden="true"></i></a>&nbsp;
-          <a href="https://www.linkedin.com/in/devashish-gupta-b3a473100/" target="_blank" class="footer-icons"><i
-              class="fa fa-linkedin" aria-hidden="true"></i></a>&nbsp;
-          <a href="https://www.twitter.com/imdevacsh" target="_blank" class="footer-icons"><i class="fa fa-twitter"
-              aria-hidden="true"></i></a>&nbsp;
-          <a href="https://stackoverflow.com/users/8504438/devas" target="_blank" class="footer-icons"><i
-              class="fa fa-stack-overflow" aria-hidden="true"></i></a>&nbsp;
-          <a href="https://www.codechef.com/users/devash" target="_blank" class="footer-icons"><i class="fa fa-code"
-              aria-hidden="true"></i></a>&nbsp;
-          <a href="https://www.devacsh.wordpress.com/" target="_blank" class="footer-icons"><i class="fa fa-wordpress"
-              aria-hidden="true"></i></a>&nbsp;
-          <a href="https://codepen.io/devashishg/" target="_blank" class="footer-icons"><i class="fa fa-codepen"
-              aria-hidden="true"></i></a>&nbsp;
-          <a href="https://www.slideshare.net/DevashishGupta12" target="_blank" class="footer-icons"><i
-              class="fa fa-slideshare" aria-hidden="true"></i></a>&nbsp;
-          <a href="https://devacsh.medium.com/" target="_blank" class="footer-icons"><i class="fa fa-medium"
-              aria-hidden="true"></i></a>&nbsp;
-        </div>
-
-        <div class="col col-sm-2 f-1 pt-1" style="color:#303030;">
-          <div>Shout-out to:</div>
-          <ul typingStyle=bullet>
-            <li>Bootstrap4/jquery</li>
-            <li>Google Fonts/charts Api</li>
-            <li>Font Awesome icons</li>
-            <li>Github/twitter Buttons Api</li>
-            <li>@IonicaBizau GithubCalender</li>
-            <li>W3S,favicomatic</li>
-            <li>DEVICON</li>
-          </ul>
-        </div>
-      </div>
-      <hr>
-      <div class="mb-4 text-center">
-        No &copy; issues, Designed with HTML5/CSS4 <b style="color:blue;"> &lt/&gt</b> & fine folks and lots of <i
-          class="fa fa-heart" aria-hidden="true" style="color:red;"></i>&nbsp;!
-      </div>
-    </div>
-    </div>
-  </footer>
-
-  <script>
-    GitHubCalendar(".calendar", "devashishg", { responsive: true });
-  </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-  <!-- Buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <!-- Chart Google -->
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-  <script src="js/slider/slider.js"></script>
-  <script src="js/main.js"></script>
+    </footer>
+    <a class="easter-egg" href="typing-test.html" aria-label="Typing test">Typefast ↗</a>
+  </div>
+  <noscript style="position:fixed;top:8px;left:8px;background:#111;color:#fff;padding:6px 10px;border:1px solid #333;border-radius:6px;z-index:5;">This page needs JavaScript to render portfolio content.</noscript>
+  <script src="js/orbit.js"></script>
 </body>
 
 </html>

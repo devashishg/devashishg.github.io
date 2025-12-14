@@ -1,0 +1,26 @@
+[
+  {
+    "tag": "Deployment Reliability",
+    "title": "Zero-Downtime Lobby Movement",
+    "summary": "Delivered live traffic shift capability to roll forward game servers without user disruption, enabling safer deployments and quicker recovery.",
+    "stack": "Node.js · Java · Blue/Green · CI/CD"
+  },
+  {
+    "tag": "Tournaments",
+    "title": "WPS Tournaments",
+    "summary": "Designed and implemented tournament formats that reliably host 100K+ concurrent participants with predictable latencies and stable payouts.",
+    "stack": "Java · Node.js · Kafka · Redis · PostgreSQL · Kubernetes"
+  },
+  {
+    "tag": "Leaderboard",
+    "title": "Casual Games Multi Attempts Leaderboard",
+    "summary": "Delivered a leaderboard system capable of handling 10M entries with efficient writes and ranked retrieval, tuned for low-latency reads at peak load.",
+    "stack": "Java · Redis · PostgreSQL · CQRS · Kubernetes"
+  },
+  {
+    "tag": "Platform Libraries",
+    "title": "Matchmaking & Kafka SDK",
+    "summary": "Engineered reusable matchmaking and Kafka wrapper libraries adopted across MPL’s games to standardize queueing, telemetry, and retries.",
+    "stack": "TypeScript · Node.js · Kafka · OpenTelemetry"
+  }
+]

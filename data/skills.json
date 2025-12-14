@@ -1,0 +1,18 @@
+[
+  {
+    "group": "Languages & Frameworks",
+    "items": ["Java", "TypeScript", "Node.js", "Angular", "Express.js"]
+  },
+  {
+    "group": "Distributed Systems",
+    "items": ["Kafka", "Socket.io", "gRPC", "REST", "RabbitMQ"]
+  },
+  {
+    "group": "Data & Storage",
+    "items": ["Postgres", "MongoDB", "Redis", "ScyllaDB"]
+  },
+  {
+    "group": "Reliability & Infra",
+    "items": ["AWS", "GCP", "Kubernetes", "Docker", "Facets", "Jenkins", "Grafana"]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Email",
+    "href": "mailto:devashishgupta@zohomail.in",
+    "variant": "primary"
+  },
+  {
+    "label": "LinkedIn",
+    "href": "https://www.linkedin.com/in/devashish-gupta-b3a473100/",
+    "variant": "ghost"
+  },
+  {
+    "label": "Resume",
+    "href": "media/devashish_gupta.pdf",
+    "variant": "ghost"
+  }
+]

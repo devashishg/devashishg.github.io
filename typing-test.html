@@ -6,172 +6,469 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Type Fast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        html {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        :root {
+            --bg: #03040a;
+            --panel: rgba(12, 18, 34, 0.78);
+            --panel-strong: rgba(18, 25, 44, 0.88);
+            --text: #eaf2ff;
+            --muted: #97a7c1;
+            --accent: #6ef2ff;
+            --accent-2: #ff75e6;
+            --border: rgba(255, 255, 255, 0.08);
+            --bg-glow1: rgba(255, 117, 230, 0.14);
+            --bg-glow2: rgba(110, 242, 255, 0.16);
+            --bg-glow3: rgba(209, 255, 110, 0.26);
+            --glow-a: rgba(110, 242, 255, 0.16);
+            --glow-b: rgba(255, 117, 230, 0.14);
+            --input-bg: rgba(255, 255, 255, 0.04);
+            --input-border: var(--border);
+            --tile-bg: rgba(255, 255, 255, 0.02);
+            --wrap-glow1: rgba(110, 242, 255, 0.22);
+            --wrap-glow2: rgba(255, 117, 230, 0.18);
         }
 
-        .w-100 {
-            width: 100% !important;
+        body.light {
+            --bg: #f5f7fb;
+            --panel: rgba(255, 255, 255, 0.9);
+            --panel-strong: rgba(255, 255, 255, 0.94);
+            --text: #0e1a2c;
+            --muted: #4c5b72;
+            --accent: #4a9dff;
+            --accent-2: #6e6bff;
+            --border: rgba(12, 25, 48, 0.14);
+            --bg-glow1: rgba(0, 138, 25, 0.14);
+            --bg-glow2: rgba(145, 13, 0, 0.16);
+            --bg-glow3: rgba(46, 0, 145, 0.2);
+            --glow-a: rgba(0, 138, 25, 0.16);
+            --glow-b: rgba(46, 0, 145, 0.14);
+            --input-bg: rgba(12, 25, 48, 0.04);
+            --input-border: rgba(12, 25, 48, 0.16);
+            --tile-bg: rgba(12, 25, 48, 0.05);
+            --wrap-glow1: rgba(0, 138, 25, 0.18);
+            --wrap-glow2: rgba(46, 0, 145, 0.16);
         }
 
-        .results {
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Oxanium", "Cascadia Code", "Inter", "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            background: radial-gradient(circle at 18% 20%, var(--bg-glow1), transparent 36%),
+                radial-gradient(circle at 82% 24%, var(--bg-glow2), transparent 38%),
+                radial-gradient(circle at 50% 120%, var(--bg-glow3), transparent 42%),
+                var(--bg);
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
             justify-content: center;
-            background-color: rgb(245 245 245);
-            border-radius: 32px;
-            margin-top: 10px;
-            margin: 10px 20px;
+            padding: 32px 20px 48px;
         }
 
-
-        input[type="reset"i] {
-            padding: 10px 15px;
-            font-size: 16px;
-            background-color: rgba(6, 8, 17, 0.822);
-            color: white;
-            border: none;
-            border-radius: 5px;
+        .shell {
+            width: min(980px, 100%);
+            background: linear-gradient(135deg, rgba(12, 18, 34, 0.88), rgba(12, 18, 34, 0.72));
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 20px 90px rgba(0, 0, 0, 0.55);
+            overflow: hidden;
+            position: relative;
         }
 
-        .key {
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.822);
-            border: 2px rgb(255, 255, 255) solid;
-            color: white;
-            display: inline-flex;
-            min-width: 20px;
-            font-weight: bold;
-            border-radius: 5px;
-            justify-content: center;
-            box-shadow: 0 5px 5px #b6b6b6;
-            text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+        body.light .shell {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(245, 247, 251, 0.92));
+            box-shadow: 0 18px 70px rgba(16, 35, 62, 0.18);
         }
 
-        .key:hover {
-            box-shadow: none;
-            animation: name 1s ease 0s 1 alternate forwards;
-            width: 12px;
-            height: 15px;
-            justify-content: center;
-            animation-name: none;
-            border: 2px rgb(252, 252, 252) solid;
-            border-radius: 5px;
+        .glow {
+            position: absolute;
+            inset: -30% -10%;
+            background: radial-gradient(circle at 55% 0%, var(--glow-a), transparent 52%),
+                radial-gradient(circle at 8% 70%, var(--glow-b), transparent 46%);
+            filter: blur(10px);
+            pointer-events: none;
+        }
+
+        header {
+            padding: 22px 26px 14px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent);
+        }
+
+        body.light header {
+            background: linear-gradient(90deg, rgba(12, 25, 48, 0.05), transparent);
+        }
+
+        .title {
+            font-family: "Oxanium", "Cascadia Code", "Inter", "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            font-size: 20px;
+            margin: 0;
+            padding: 12px;
+        }
+
+        .best {
+            font-size: 14px;
+            color: var(--muted);
+            text-align: right;
+            min-width: 160px;
+        }
+
+        .header-actions {
+            display: flex;
             align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            letter-spacing: 0.02em;
+            color: var(--muted);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .theme-switch {
+            position: relative;
+            width: 44px;
+            height: 22px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: background 180ms ease, border-color 180ms ease;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .theme-switch::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 2px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            transition: transform 200ms ease, box-shadow 200ms ease, translate 200ms ease;
+            transform: translateY(-50%);
+        }
+
+        body.light .theme-switch {
+            background: rgba(12, 25, 48, 0.08);
+            border-color: rgba(12, 25, 48, 0.12);
+        }
+
+        body.light .theme-switch::after {
+            transform: translate(22px, -50%);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding: 16px 20px 22px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px 18px 16px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        }
+
+        .letter-wrap {
+            display: grid;
+            place-items: center;
+            padding: 18px 12px;
+            background: radial-gradient(circle at 50% 30%, var(--wrap-glow1), var(--wrap-glow2), transparent 75%);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            margin-bottom: 12px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
         }
 
         .letter {
+            font-family: "Oxanium", "Cascadia Code", "Inter", "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
             text-align: center;
-            font-size: 24px;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, .2);
-            border-radius: 20px;
-            width: 350px;
-            box-shadow: inset 0 0 9px 0px #b6b6b6;
-            opacity: 0.6;
-        }
-
-        .element {
-            display: flex;
-            margin: 10px 32px;
-            align-items: center;
-            flex-direction: column;
-            height: 90px;
-            justify-content: space-evenly;
-            cursor: pointer;
-        }
-
-        .input-field {
-            padding: 5px 10px;
-            font-size: 24px;
-            outline: none;
-            width: 300px;
-            font: 100 14px sans;
-            border: 0;
-        }
-
-        .display-none {
-            display: none;
-        }
-
-        .reset {
-            margin-left: auto !important;
+            font-size: 56px;
+            letter-spacing: 0.08em;
+            padding: 18px 26px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
         }
 
         .input-area {
             display: flex;
-            justify-content: center;
+            gap: 12px;
+            align-items: center;
             flex-wrap: wrap;
-            margin: 10px 20px;
-            font-size: 28px;
-            border-radius: 0 7px 7px 0;
-            border: 1px black solid;
+            margin-top: 6px;
         }
 
-        .title {
-            margin: 10px;
-            font-size: 28px;
-            color: #206d31;
-            font-weight: bolder;
-            width: max-content;
-            text-align: center;
+        .input-field {
+            flex: 1;
+            min-width: 240px;
+            padding: 14px 16px;
+            font-size: 18px;
+            font-family: "Oxanium", "Cascadia Code", "Inter", "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+            border-radius: 12px;
+            border: 1px solid var(--input-border);
+            background: var(--input-bg);
+            color: var(--text);
+            text-transform: uppercase;
+            outline: none;
+            transition: border-color 160ms ease, box-shadow 160ms ease;
         }
 
-        .best {
-            padding-top: 4px;
-            font-size: 16px;
-            text-align: end;
-            justify-content: right;
+        .input-field:focus {
+            border-color: rgba(96, 227, 255, 0.6);
+            box-shadow: 0 0 0 3px rgba(96, 227, 255, 0.18);
         }
 
-        .flex-column,
-        .flex-row {
+        .input-field::placeholder {
+            color: rgba(232, 242, 255, 0.52);
+            letter-spacing: 0.01em;
+            text-transform: none;
+        }
+
+        body.light .input-field::placeholder {
+            color: rgba(12, 25, 48, 0.44);
+        }
+
+        input[type="reset"] {
+            padding: 12px 16px;
+            font-size: 15px;
+            font-family: "Oxanium", "Cascadia Code", "Inter", "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #04060d;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            box-shadow: 0 10px 28px rgba(96, 227, 255, 0.35);
+            transition: transform 140ms ease, box-shadow 140ms ease;
+        }
+
+        input[type="reset"]:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 12px 32px rgba(96, 227, 255, 0.45);
+        }
+
+        .controls {
             display: flex;
             align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 14px;
         }
 
-        .flex-column {
-            justify-content: center;
+        .controls input[type="checkbox"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.05);
+            position: relative;
+            cursor: pointer;
+            transition: border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
+        }
+
+        .controls input[type="checkbox"]:checked {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 5px 5px rgba(110, 242, 255, 0.15);
+        }
+
+        body.light .controls input[type="checkbox"] {
+            border-color: rgba(12, 25, 48, 0.35);
+            background: rgba(12, 25, 48, 0.08);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        body.light .controls input[type="checkbox"]:checked {
+            border-color: rgba(12, 25, 48, 0.35);
+            box-shadow: 0 0 5px 5px rgba(74, 157, 255, 0.2);
+        }
+
+        .controls input[type="checkbox"]::after {
+            content: "";
+            position: absolute;
+            inset: 4px;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            transition: opacity 140ms ease;
+        }
+
+        .controls input[type="checkbox"]:checked::after {
+            opacity: 1;
+        }
+
+        .results {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+            padding: 12px;
+            background: transparent;
+            border-radius: 12px;
+            border: none;
+            min-height: 120px;
+        }
+
+        .element {
+            display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--tile-bg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
         }
 
-        .flex-row {
-            flex-direction: row;
+        .key {
+            padding: 12px 14px;
+            min-width: 44px;
+            background: linear-gradient(145deg, rgba(110, 242, 255, 0.24), rgba(255, 117, 230, 0.22));
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: var(--text);
+            display: inline-flex;
+            justify-content: center;
+            border-radius: 10px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+            box-shadow:
+                0 12px 18px rgba(0, 0, 0, 0.38),
+                inset 0 1px 0 rgba(255, 255, 255, 0.18),
+                inset 0 -6px 14px rgba(0, 0, 0, 0.35);
+            transform: translateY(0);
+            transition: transform 140ms ease, box-shadow 140ms ease;
         }
 
-        .m-4 {
-            margin: 0 16px;
+        .key:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 16px 24px rgba(0, 0, 0, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -6px 14px rgba(0, 0, 0, 0.42);
+        }
+
+        .time {
+            color: var(--muted);
+            font-size: 13px;
+            letter-spacing: 0.01em;
+        }
+
+        .info-line {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 14px;
+            min-height: 20px;
+        }
+
+        em {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .warning {
+            color: #ffb347;
+            font-size: 14px;
+            min-height: 18px;
+        }
+
+        .hidden {
+            display: none !important;
         }
     </style>
 
 </head>
 
 <body>
-    <div class="flex-column">
-        <div class="title">
-            Let's test your typing speed.
-            <div id="best" class="best p-4 border-top"></div>
-        </div>
-        <em>Press enter to reset at any point of time.</em>
-        <div id="letter" class="letter"></div>
-        <div class="input-area">
-            <input class="input-field" placeholder="Follow the alphabets shown above" type="text" id="typeHere">
-            <input type="reset" id="reset" value="Reset" class="reset">
-        </div>
-        <div class="flex-row">
-            <input type="checkbox" name="Shuffle" id="shuffle" />
-            <label for="Shuffle"> Shuffle & Reset </label>
-        </div>
+    <div class="shell">
+        <div class="glow" aria-hidden="true"></div>
+        <header>
+            <div>
+                <p class="title">TYPE FAST: A-Z RUN</p>
+                <em style="margin-left: 12px;">Press Enter anytime to reset</em>
+            </div>
+            <div class="header-actions">
+                <label class="theme-toggle" for="themeSwitch">
+                    <span>Light</span>
+                    <span class="theme-switch" aria-label="Toggle light mode"></span>
+                </label>
+                <div id="best" class="best"></div>
+            </div>
+        </header>
+        <main>
+            <section class="panel">
+                <div class="letter-wrap">
+                    <div id="letter" class="letter"></div>
+                </div>
+                <div class="input-area">
+                    <input class="input-field" placeholder="Follow the alphabets as they appears" type="text" id="typeHere" autocapitalize="characters">
+                    <input type="reset" id="reset" value="Reset" class="reset">
+                </div>
+                <div class="controls">
+                    <input type="checkbox" name="Shuffle" id="shuffle" />
+                    <label for="Shuffle"> Shuffle & Reset </label>
+                </div>
+                <div id="info" class="info-line"></div>
+                <div class="warning"></div>
+            </section>
+            <section id="log-panel" class="panel hidden">
+                <div class="title" style="margin: 0px 0px 0px 12px; font-size:16px; letter-spacing:0.04em;">Key log</div>
+                <div id="results" class="results"></div>
+            </section>
+        </main>
     </div>
-    <div id="results" class="results"></div>
-    <div class="warning">
-    </div>
-    <div id="info"></div>
 
 </body>
 
 <script src="./js/typo.js"></script>
+<script>
+    (() => {
+        const saved = localStorage.getItem('typing-theme');
+        if (saved === 'light') {
+            document.body.classList.add('light');
+        }
+        const toggle = document.querySelector('.theme-toggle');
+        toggle?.addEventListener('click', () => {
+            const isLight = document.body.classList.toggle('light');
+            localStorage.setItem('typing-theme', isLight ? 'light' : 'dark');
+        });
+    })();
+</script>
 
 </html>

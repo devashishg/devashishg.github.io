@@ -6,6 +6,7 @@ const result = document.getElementById('results');
 const info = document.getElementById('info');
 const HS = document.getElementById('best');
 const cb = document.getElementById('shuffle');
+const logPanel = document.getElementById('log-panel');
 let index = 0;
 letter.innerHTML = arr[index];
 const response = [];
@@ -34,6 +35,7 @@ typer.addEventListener('input', (event) => {
                 const log = (response[25] - response[0]) / 1000;
                 letter.innerHTML = `Your time: ${log}s`;
                 typer.setAttribute('disabled', 'true');
+                logPanel && logPanel.classList.remove('hidden');
                 result.innerHTML = `<div class="title w-100">Final Results 🏆</div> ${getMeResults(response)}`;
                 index = 0;
                 info.innerHTML = '';
@@ -75,6 +77,7 @@ function resetAction() {
     letter.innerHTML = arr[index];
     typer.removeAttribute('disabled');
     result.innerHTML = '';
+    logPanel && logPanel.classList.add('hidden');
     response.length = [];
     info.innerHTML = '';
 }
