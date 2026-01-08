@@ -81,8 +81,9 @@ body {
 .hero {
   min-height: 85vh;
   display: grid;
-  place-items: center;
+  place-items: baseline center;
   text-align: center;
+  margin-top: 10%;
 }
 
 .hero-inner {
