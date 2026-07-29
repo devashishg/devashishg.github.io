@@ -2,473 +2,622 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Type Fast</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #03040a;
-            --panel: rgba(12, 18, 34, 0.78);
-            --panel-strong: rgba(18, 25, 44, 0.88);
-            --text: #eaf2ff;
-            --muted: #97a7c1;
-            --accent: #6ef2ff;
-            --accent-2: #ff75e6;
-            --border: rgba(255, 255, 255, 0.08);
-            --bg-glow1: rgba(255, 117, 230, 0.14);
-            --bg-glow2: rgba(110, 242, 255, 0.16);
-            --bg-glow3: rgba(209, 255, 110, 0.26);
-            --glow-a: rgba(110, 242, 255, 0.16);
-            --glow-b: rgba(255, 117, 230, 0.14);
-            --input-bg: rgba(255, 255, 255, 0.04);
-            --input-border: var(--border);
-            --tile-bg: rgba(255, 255, 255, 0.02);
-            --wrap-glow1: rgba(110, 242, 255, 0.22);
-            --wrap-glow2: rgba(255, 117, 230, 0.18);
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Typefast — A→Z</title>
+  <meta name="description" content="Typefast: a tactile A→Z speed-typing game. Press the keys, chase your best time.">
+  <link rel="icon" type="image/x-icon" href="media/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --desk: #17140f;
+      --mat: #201c16;
+      --mat-edge: #2b261e;
+      --plate: #262119;
+      --cap-face: #322c23;
+      --cap-face-hi: #3a3329;
+      --cap-side: #14100a;
+      --cap-edge: #453d30;
+      --legend: #ece4d4;
+      --legend-dim: #8f8677;
+      --text: #ece4d4;
+      --muted: #9a9083;
+      --faint: #6b6357;
+      --coral: #ff7a4d;
+      --coral-deep: #d85a30;
+      --green: #7fc37f;
+      --amber: #e0a83e;
+      --line: rgba(236, 228, 212, 0.1);
+      --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+      --sans: 'Outfit', system-ui, sans-serif;
+    }
 
-        body.light {
-            --bg: #f5f7fb;
-            --panel: rgba(255, 255, 255, 0.9);
-            --panel-strong: rgba(255, 255, 255, 0.94);
-            --text: #0e1a2c;
-            --muted: #4c5b72;
-            --accent: #4a9dff;
-            --accent-2: #6e6bff;
-            --border: rgba(12, 25, 48, 0.14);
-            --bg-glow1: rgba(0, 138, 25, 0.14);
-            --bg-glow2: rgba(145, 13, 0, 0.16);
-            --bg-glow3: rgba(46, 0, 145, 0.2);
-            --glow-a: rgba(0, 138, 25, 0.16);
-            --glow-b: rgba(46, 0, 145, 0.14);
-            --input-bg: rgba(12, 25, 48, 0.04);
-            --input-border: rgba(12, 25, 48, 0.16);
-            --tile-bg: rgba(12, 25, 48, 0.05);
-            --wrap-glow1: rgba(0, 138, 25, 0.18);
-            --wrap-glow2: rgba(46, 0, 145, 0.16);
-        }
+    body.light {
+      --desk: #d9d3c7;
+      --mat: #e8e4dc;
+      --mat-edge: #cfc9bc;
+      --plate: #dcd6ca;
+      --cap-face: #faf7f0;
+      --cap-face-hi: #ffffff;
+      --cap-side: #b3ab99;
+      --cap-edge: #c9c2b2;
+      --legend: #2b2620;
+      --legend-dim: #8a8375;
+      --text: #2b2620;
+      --muted: #6b6459;
+      --faint: #9a9285;
+      --coral: #d85a30;
+      --coral-deep: #b8481f;
+      --green: #3f8f5f;
+      --amber: #b8860b;
+      --line: rgba(43, 38, 32, 0.12);
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: "Oxanium", "Cascadia Code", "Inter", "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
-            color: var(--text);
-            background: radial-gradient(circle at 18% 20%, var(--bg-glow1), transparent 36%),
-                radial-gradient(circle at 82% 24%, var(--bg-glow2), transparent 38%),
-                radial-gradient(circle at 50% 120%, var(--bg-glow3), transparent 42%),
-                var(--bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 32px 20px 48px;
-        }
+    body {
+      min-height: 100svh;
+      font-family: var(--mono);
+      color: var(--text);
+      background:
+        radial-gradient(1100px 500px at 50% -10%, rgba(255, 255, 255, 0.05), transparent 60%),
+        var(--desk);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(12px, 3vw, 32px);
+      transition: background .3s ease, color .3s ease;
+    }
+    body.light {
+      background:
+        radial-gradient(1100px 500px at 50% -10%, rgba(255, 255, 255, 0.55), transparent 60%),
+        var(--desk);
+    }
 
-        .shell {
-            width: min(980px, 100%);
-            background: linear-gradient(135deg, rgba(12, 18, 34, 0.88), rgba(12, 18, 34, 0.72));
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            box-shadow: 0 20px 90px rgba(0, 0, 0, 0.55);
-            overflow: hidden;
-            position: relative;
-        }
+    /* ---------- desk mat ---------- */
+    .mat {
+      width: min(720px, 100%);
+      background: var(--mat);
+      border: 1px solid var(--mat-edge);
+      border-radius: 22px;
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      transition: background .3s ease;
+    }
+    body.light .mat { box-shadow: 0 20px 50px rgba(80, 70, 50, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
 
-        body.light .shell {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(245, 247, 251, 0.92));
-            box-shadow: 0 18px 70px rgba(16, 35, 62, 0.18);
-        }
+    /* ---------- top rail ---------- */
+    header {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 16px clamp(16px, 4vw, 24px);
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+    .brand-key {
+      width: 38px; height: 38px; flex: none; border-radius: 9px;
+      background: linear-gradient(180deg, var(--cap-face-hi), var(--cap-face));
+      border: 1px solid var(--cap-edge); border-bottom: 4px solid var(--cap-side);
+      display: grid; place-items: center;
+      font-weight: 800; font-size: 15px; color: var(--coral);
+    }
+    .titles h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(16px, 4.2vw, 20px); letter-spacing: .02em; line-height: 1.1; }
+    .titles .sub { font-size: 10px; color: var(--faint); letter-spacing: .14em; text-transform: uppercase; margin-top: 3px; }
+    .head-right { display: flex; align-items: center; gap: 14px; flex: none; }
 
-        .glow {
-            position: absolute;
-            inset: -30% -10%;
-            background: radial-gradient(circle at 55% 0%, var(--glow-a), transparent 52%),
-                radial-gradient(circle at 8% 70%, var(--glow-b), transparent 46%);
-            filter: blur(10px);
-            pointer-events: none;
-        }
+    .theme-toggle { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+    .theme-switch {
+      position: relative; width: 46px; height: 24px; border-radius: 7px; flex: none;
+      background: linear-gradient(180deg, var(--cap-face-hi), var(--cap-face));
+      border: 1px solid var(--cap-edge); border-bottom: 4px solid var(--cap-side);
+      transition: border-bottom-width .12s ease;
+    }
+    .theme-switch::after {
+      content: "☾"; position: absolute; inset: 0; display: grid; place-items: center;
+      font-size: 12px; color: var(--legend-dim); transition: content .2s;
+    }
+    body.light .theme-switch::after { content: "☀"; color: var(--amber); }
+    .theme-toggle:active .theme-switch { border-bottom-width: 1px; transform: translateY(3px); }
 
-        header {
-            padding: 22px 26px 14px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 12px;
-            position: relative;
-            z-index: 1;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent);
-        }
+    #best { text-align: right; line-height: 1.2; min-width: 74px; }
+    #best .best-label { display: block; font-size: 9px; letter-spacing: .16em; color: var(--faint); text-transform: uppercase; }
+    #best .best-val { font-size: 17px; font-weight: 700; color: var(--coral); }
 
-        body.light header {
-            background: linear-gradient(90deg, rgba(12, 25, 48, 0.05), transparent);
-        }
+    main { padding: clamp(16px, 4vw, 26px); display: flex; flex-direction: column; gap: 18px; }
 
-        .title {
-            font-family: "Oxanium", "Cascadia Code", "Inter", "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            font-size: 20px;
-            margin: 0;
-            padding: 12px;
-        }
+    /* ---------- stat strip ---------- */
+    .hud {
+      display: flex; justify-content: space-between; gap: 10px;
+      font-size: 12px; color: var(--muted); letter-spacing: .04em;
+    }
+    .hud b { color: var(--text); font-weight: 700; font-size: 14px; }
+    #timer { color: var(--coral); min-width: 64px; display: inline-block; }
+    #combo-val { color: var(--green); }
 
-        .best {
-            font-size: 14px;
-            color: var(--muted);
-            text-align: right;
-            min-width: 160px;
-        }
+    /* ---------- keyboard stage ---------- */
+    .stage {
+      background: var(--plate);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: clamp(22px, 6vw, 40px) 10px clamp(26px, 6vw, 42px);
+      overflow: hidden;
+    }
+    .carousel {
+      display: flex; align-items: flex-end; justify-content: center;
+      gap: clamp(8px, 2.4vw, 16px);
+    }
+    .cap {
+      display: grid; place-items: center; flex: none;
+      font-weight: 700; color: var(--legend-dim);
+      background: linear-gradient(180deg, var(--cap-face-hi), var(--cap-face));
+      border: 1px solid var(--cap-edge);
+      border-bottom: 5px solid var(--cap-side);
+      border-radius: 10px;
+      width: clamp(38px, 11vw, 52px); height: clamp(38px, 11vw, 52px);
+      font-size: clamp(15px, 4vw, 19px);
+      transition: transform .18s ease, border-bottom-width .18s ease, opacity .18s ease;
+    }
+    .cap.done {
+      border-bottom-width: 1px; transform: translateY(4px); opacity: .55;
+      color: var(--green);
+    }
+    .cap.far { opacity: .35; }
+    .cap.ghost { opacity: 0; pointer-events: none; }
+    .cap.main {
+      width: clamp(104px, 30vw, 148px); height: clamp(104px, 30vw, 148px);
+      font-size: clamp(52px, 15vw, 76px); font-weight: 800;
+      color: var(--legend); border-radius: 20px;
+      border-bottom-width: clamp(9px, 2.4vw, 12px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+      position: relative;
+    }
+    .cap.main::after {
+      content: ""; position: absolute; top: 7px; left: 9px; right: 9px; height: 30%;
+      border-radius: 12px 12px 40% 40%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), transparent);
+      pointer-events: none;
+    }
+    body.light .cap.main::after { background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), transparent); }
+    .cap.main.press { animation: keypress .16s ease; }
+    @keyframes keypress {
+      0% { transform: translateY(0); border-bottom-width: clamp(9px, 2.4vw, 12px); }
+      45% { transform: translateY(7px); border-bottom-width: 2px; }
+      100% { transform: translateY(0); border-bottom-width: clamp(9px, 2.4vw, 12px); }
+    }
+    .cap.main.wrong-anim { animation: wobble .3s ease; }
+    @keyframes wobble {
+      20% { transform: translateX(-5px) rotate(-1.6deg); }
+      50% { transform: translateX(5px) rotate(1.6deg); }
+      80% { transform: translateX(-2px); }
+    }
+    .cap.main.finished {
+      font-size: clamp(22px, 6.4vw, 34px); letter-spacing: .01em; color: var(--coral);
+      width: auto; min-width: clamp(104px, 30vw, 148px); padding: 0 22px;
+    }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    /* ---------- progress ---------- */
+    .prog-wrap { display: flex; align-items: center; gap: 12px; }
+    .progress {
+      flex: 1; height: 10px; border-radius: 6px; overflow: hidden;
+      background: var(--plate); border: 1px solid var(--line);
+    }
+    .progress .fill {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--coral-deep), var(--coral));
+      border-radius: 6px;
+      transition: width .22s ease;
+    }
+    #prog-val { font-size: 12px; color: var(--muted); min-width: 44px; text-align: right; }
 
-        .theme-toggle {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            letter-spacing: 0.02em;
-            color: var(--muted);
-            cursor: pointer;
-            user-select: none;
-        }
+    /* ---------- input spacebar + reset ---------- */
+    .input-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    #typeHere {
+      flex: 1; min-width: 190px;
+      padding: 16px 18px; text-align: center;
+      font-family: var(--mono); font-size: 16px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--text); outline: none; cursor: text;
+      background: linear-gradient(180deg, var(--cap-face-hi), var(--cap-face));
+      border: 1px solid var(--cap-edge); border-bottom: 6px solid var(--cap-side);
+      border-radius: 14px;
+      transition: border-bottom-width .1s ease, transform .1s ease, box-shadow .15s ease;
+    }
+    #typeHere::placeholder { color: var(--legend-dim); letter-spacing: .02em; text-transform: none; font-weight: 400; }
+    #typeHere:focus { box-shadow: 0 0 0 3px rgba(216, 90, 48, 0.25); }
+    #typeHere:disabled { opacity: .5; }
+    #reset {
+      padding: 14px 24px; cursor: pointer;
+      font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: .12em;
+      color: #fff8f2; border-radius: 14px;
+      background: linear-gradient(180deg, var(--coral), var(--coral-deep));
+      border: 1px solid var(--coral-deep); border-bottom: 6px solid #8f3413;
+      transition: border-bottom-width .1s ease, transform .1s ease;
+    }
+    #reset:active { transform: translateY(4px); border-bottom-width: 2px; }
 
-        .theme-switch {
-            position: relative;
-            width: 44px;
-            height: 22px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            transition: background 180ms ease, border-color 180ms ease;
-            display: inline-block;
-            vertical-align: middle;
-        }
+    /* ---------- controls ---------- */
+    .controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .switch-label { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; font-size: 12px; color: var(--muted); }
+    #shuffle {
+      appearance: none; width: 40px; height: 22px; border-radius: 6px; flex: none; cursor: pointer; position: relative;
+      background: linear-gradient(180deg, var(--cap-face-hi), var(--cap-face));
+      border: 1px solid var(--cap-edge); border-bottom: 4px solid var(--cap-side);
+      transition: border-bottom-width .1s ease, transform .1s ease;
+    }
+    #shuffle::after {
+      content: ""; position: absolute; top: 4px; left: 5px; width: 11px; height: 9px; border-radius: 3px;
+      background: var(--legend-dim); transition: transform .18s ease, background .18s ease;
+    }
+    #shuffle:checked::after { transform: translateX(17px); background: var(--coral); }
+    #shuffle:active { transform: translateY(2px); border-bottom-width: 1px; }
+    .hint { font-size: 11px; color: var(--faint); }
+    .hint kbd {
+      font-size: 10px; padding: 2px 8px; border-radius: 5px;
+      background: linear-gradient(180deg, var(--cap-face-hi), var(--cap-face));
+      border: 1px solid var(--cap-edge); border-bottom: 3px solid var(--cap-side);
+      color: var(--muted);
+    }
 
-        .theme-switch::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 2px;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-            transition: transform 200ms ease, box-shadow 200ms ease, translate 200ms ease;
-            transform: translateY(-50%);
-        }
+    #info { font-size: 12px; color: var(--muted); min-height: 17px; }
+    #info .record { color: var(--green); font-weight: 700; }
+    .warning { font-size: 12px; color: var(--amber); min-height: 15px; }
+    #info font[color="red"] { color: var(--coral) !important; }
 
-        body.light .theme-switch {
-            background: rgba(12, 25, 48, 0.08);
-            border-color: rgba(12, 25, 48, 0.12);
-        }
+    /* ---------- results ---------- */
+    #log-panel {
+      border: 1px solid var(--line); border-radius: 16px; padding: 16px;
+      background: var(--plate);
+    }
+    #log-panel .panel-head {
+      display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px;
+      font-family: var(--sans); font-weight: 700; font-size: 14px;
+    }
+    #log-panel .panel-head .sub { margin-left: auto; font-family: var(--mono); font-size: 10px; letter-spacing: .12em; color: var(--faint); text-transform: uppercase; }
+    #share {
+      padding: 8px 16px; cursor: pointer; flex: none;
+      font-family: var(--mono); font-weight: 700; font-size: 11px; letter-spacing: .1em;
+      color: var(--legend); border-radius: 9px;
+      background: linear-gradient(180deg, var(--cap-face-hi), var(--cap-face));
+      border: 1px solid var(--cap-edge); border-bottom: 4px solid var(--cap-side);
+      transition: border-bottom-width .1s ease, transform .1s ease, color .15s ease;
+    }
+    #share:active { transform: translateY(3px); border-bottom-width: 1px; }
+    #share.copied { color: var(--green); }
+    #results { display: grid; grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: 10px; }
+    #results .title { grid-column: 1 / -1; font-family: var(--sans); font-weight: 700; font-size: 14px; color: var(--coral); }
+    .element {
+      display: flex; flex-direction: column; align-items: center; gap: 7px;
+      padding: 10px 6px 12px; border-radius: 12px;
+      background: var(--mat); border: 1px solid var(--line);
+      opacity: 0; transform: translateY(8px); animation: rise .35s ease forwards;
+    }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+    .key {
+      width: 36px; height: 36px; display: grid; place-items: center;
+      font-weight: 700; font-size: 15px; border-radius: 8px; color: var(--legend);
+      background: linear-gradient(180deg, var(--cap-face-hi), var(--cap-face));
+      border: 1px solid var(--cap-edge); border-bottom: 4px solid var(--cap-side);
+    }
+    .element.fast .key { color: var(--green); box-shadow: 0 0 0 2px var(--green); }
+    .element.slow .key { color: var(--amber); box-shadow: 0 0 0 2px var(--amber); }
+    .time { font-size: 11px; color: var(--muted); }
+    .element.fast .time { color: var(--green); font-weight: 700; }
+    .element.slow .time { color: var(--amber); font-weight: 700; }
 
-        body.light .theme-switch::after {
-            transform: translate(22px, -50%);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
+    .foot { display: flex; justify-content: center; padding: 2px 0 6px; }
+    .foot a { font-size: 11px; color: var(--faint); text-decoration: none; }
+    .foot a:hover { color: var(--coral); }
 
-        main {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            padding: 16px 20px 22px;
-            position: relative;
-            z-index: 1;
-        }
+    .hidden { display: none !important; }
 
-        .panel {
-            background: var(--panel);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 18px 18px 16px;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        }
+    @media (max-width: 430px) {
+      .cap.side2 { display: none; }
+      .controls { flex-direction: column; align-items: stretch; text-align: center; }
+      #reset { width: 100%; }
+    }
 
-        .letter-wrap {
-            display: grid;
-            place-items: center;
-            padding: 18px 12px;
-            background: radial-gradient(circle at 50% 30%, var(--wrap-glow1), var(--wrap-glow2), transparent 75%);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            margin-bottom: 12px;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
-        }
-
-        .letter {
-            font-family: "Oxanium", "Cascadia Code", "Inter", "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
-            text-align: center;
-            font-size: 56px;
-            letter-spacing: 0.08em;
-            padding: 18px 26px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
-        }
-
-        .input-area {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-top: 6px;
-        }
-
-        .input-field {
-            flex: 1;
-            min-width: 240px;
-            padding: 14px 16px;
-            font-size: 18px;
-            font-family: "Oxanium", "Cascadia Code", "Inter", "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
-            border-radius: 12px;
-            border: 1px solid var(--input-border);
-            background: var(--input-bg);
-            color: var(--text);
-            text-transform: uppercase;
-            outline: none;
-            transition: border-color 160ms ease, box-shadow 160ms ease;
-        }
-
-        .input-field:focus {
-            border-color: rgba(96, 227, 255, 0.6);
-            box-shadow: 0 0 0 3px rgba(96, 227, 255, 0.18);
-        }
-
-        .input-field::placeholder {
-            color: rgba(232, 242, 255, 0.52);
-            letter-spacing: 0.01em;
-            text-transform: none;
-        }
-
-        body.light .input-field::placeholder {
-            color: rgba(12, 25, 48, 0.44);
-        }
-
-        input[type="reset"] {
-            padding: 12px 16px;
-            font-size: 15px;
-            font-family: "Oxanium", "Cascadia Code", "Inter", "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            color: #04060d;
-            border: none;
-            border-radius: 12px;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            cursor: pointer;
-            box-shadow: 0 10px 28px rgba(96, 227, 255, 0.35);
-            transition: transform 140ms ease, box-shadow 140ms ease;
-        }
-
-        input[type="reset"]:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 12px 32px rgba(96, 227, 255, 0.45);
-        }
-
-        .controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .controls input[type="checkbox"] {
-            appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 6px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.05);
-            position: relative;
-            cursor: pointer;
-            transition: border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
-        }
-
-        .controls input[type="checkbox"]:checked {
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            border-color: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 0 5px 5px rgba(110, 242, 255, 0.15);
-        }
-
-        body.light .controls input[type="checkbox"] {
-            border-color: rgba(12, 25, 48, 0.35);
-            background: rgba(12, 25, 48, 0.08);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
-        }
-
-        body.light .controls input[type="checkbox"]:checked {
-            border-color: rgba(12, 25, 48, 0.35);
-            box-shadow: 0 0 5px 5px rgba(74, 157, 255, 0.2);
-        }
-
-        .controls input[type="checkbox"]::after {
-            content: "";
-            position: absolute;
-            inset: 4px;
-            border-radius: 4px;
-            background: rgba(0, 0, 0, 0.35);
-            opacity: 0;
-            transition: opacity 140ms ease;
-        }
-
-        .controls input[type="checkbox"]:checked::after {
-            opacity: 1;
-        }
-
-        .results {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-            gap: 12px;
-            margin-top: 12px;
-            padding: 12px;
-            background: transparent;
-            border-radius: 12px;
-            border: none;
-            min-height: 120px;
-        }
-
-        .element {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            padding: 12px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            background: var(--tile-bg);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-        }
-
-        .key {
-            padding: 12px 14px;
-            min-width: 44px;
-            background: linear-gradient(145deg, rgba(110, 242, 255, 0.24), rgba(255, 117, 230, 0.22));
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            color: var(--text);
-            display: inline-flex;
-            justify-content: center;
-            border-radius: 10px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
-            box-shadow:
-                0 12px 18px rgba(0, 0, 0, 0.38),
-                inset 0 1px 0 rgba(255, 255, 255, 0.18),
-                inset 0 -6px 14px rgba(0, 0, 0, 0.35);
-            transform: translateY(0);
-            transition: transform 140ms ease, box-shadow 140ms ease;
-        }
-
-        .key:hover {
-            transform: translateY(-2px);
-            box-shadow:
-                0 16px 24px rgba(0, 0, 0, 0.45),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                inset 0 -6px 14px rgba(0, 0, 0, 0.42);
-        }
-
-        .time {
-            color: var(--muted);
-            font-size: 13px;
-            letter-spacing: 0.01em;
-        }
-
-        .info-line {
-            margin-top: 8px;
-            color: var(--muted);
-            font-size: 14px;
-            min-height: 20px;
-        }
-
-        em {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .warning {
-            color: #ffb347;
-            font-size: 14px;
-            min-height: 18px;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-    </style>
-
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .element { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="shell">
-        <div class="glow" aria-hidden="true"></div>
-        <header>
-            <div>
-                <p class="title">TYPE FAST: A-Z RUN</p>
-                <em style="margin-left: 12px;">Press Enter anytime to reset</em>
-            </div>
-            <div class="header-actions">
-                <label class="theme-toggle" for="themeSwitch">
-                    <span>Light</span>
-                    <span class="theme-switch" aria-label="Toggle light mode"></span>
-                </label>
-                <div id="best" class="best"></div>
-            </div>
-        </header>
-        <main>
-            <section class="panel">
-                <div class="letter-wrap">
-                    <div id="letter" class="letter"></div>
-                </div>
-                <div class="input-area">
-                    <input class="input-field" placeholder="Follow the alphabets as they appears" type="text" id="typeHere" autocapitalize="characters">
-                    <input type="reset" id="reset" value="Reset" class="reset">
-                </div>
-                <div class="controls">
-                    <input type="checkbox" name="Shuffle" id="shuffle" />
-                    <label for="Shuffle"> Shuffle & Reset </label>
-                </div>
-                <div id="info" class="info-line"></div>
-                <div class="warning"></div>
-            </section>
-            <section id="log-panel" class="panel hidden">
-                <div class="title" style="margin: 0px 0px 0px 12px; font-size:16px; letter-spacing:0.04em;">Key log</div>
-                <div id="results" class="results"></div>
-            </section>
-        </main>
-    </div>
+  <div class="mat">
+    <header>
+      <div class="brand">
+        <span class="brand-key">TF</span>
+        <div class="titles">
+          <h1>Typefast</h1>
+          <div class="sub">a → z key run</div>
+        </div>
+      </div>
+      <div class="head-right">
+        <label class="theme-toggle" title="Toggle theme">
+          <span class="theme-switch" aria-label="Toggle light mode"></span>
+        </label>
+        <div id="best"></div>
+      </div>
+    </header>
 
-</body>
+    <main>
+      <div class="hud">
+        <span>time <b id="timer">0.000</b></span>
+        <span>combo <b id="combo-val">0</b></span>
+      </div>
 
-<script src="./js/typo.js"></script>
-<script>
-    (() => {
-        const saved = localStorage.getItem('typing-theme');
-        if (saved === 'light') {
-            document.body.classList.add('light');
+      <div class="stage">
+        <div class="carousel" id="carousel" aria-label="Letter to type">
+          <span class="cap side2" id="c-2"></span>
+          <span class="cap side1" id="c-1"></span>
+          <span class="cap main" id="letter"></span>
+          <span class="cap side1" id="c1"></span>
+          <span class="cap side2" id="c2"></span>
+        </div>
+      </div>
+
+      <div class="prog-wrap">
+        <div class="progress" aria-hidden="true"><div class="fill" id="prog-fill"></div></div>
+        <span id="prog-val">0/26</span>
+      </div>
+
+      <div class="input-row">
+        <input id="typeHere" type="text" placeholder="tap here, then type the big key…" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Type here">
+        <button id="reset" type="button">RESET</button>
+      </div>
+
+      <div class="controls">
+        <label class="switch-label" for="shuffle">
+          <input type="checkbox" id="shuffle" />
+          <span>Shuffle order</span>
+        </label>
+        <span class="hint">Press <kbd>Enter</kbd> to restart</span>
+      </div>
+
+      <div id="info"></div>
+      <div class="warning"></div>
+
+      <section id="log-panel" class="hidden">
+        <div class="panel-head">Key log <span class="sub">time per key</span> <button id="share" type="button">SHARE ⤴</button></div>
+        <div id="results"></div>
+      </section>
+
+      <div class="foot"><a href="index.html">← back to portfolio</a></div>
+    </main>
+  </div>
+
+  <script>
+  /* ============ theme (keeps existing storage key; light is default for keycap look) ============ */
+  (function () {
+    const saved = localStorage.getItem('typing-theme');
+    if (saved !== 'dark') document.body.classList.add('light');
+    document.querySelector('.theme-toggle').addEventListener('click', function () {
+      const light = document.body.classList.toggle('light');
+      localStorage.setItem('typing-theme', light ? 'light' : 'dark');
+    });
+  })();
+
+  /* ============ Typefast A→Z — mechanical keycap edition ============ */
+  (function () {
+    const BASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    let arr = BASE.slice();
+
+    const letterEl = document.getElementById('letter');
+    const caps = {
+      m2: document.getElementById('c-2'), m1: document.getElementById('c-1'),
+      p1: document.getElementById('c1'),  p2: document.getElementById('c2')
+    };
+    const typer   = document.getElementById('typeHere');
+    const resetBtn = document.getElementById('reset');
+    const results = document.getElementById('results');
+    const info    = document.getElementById('info');
+    const warnEl  = document.querySelector('.warning');
+    const best    = document.getElementById('best');
+    const shuffleCb = document.getElementById('shuffle');
+    const logPanel = document.getElementById('log-panel');
+    const progFill = document.getElementById('prog-fill');
+    const timerEl = document.getElementById('timer');
+    const comboEl = document.getElementById('combo-val');
+    const progEl  = document.getElementById('prog-val');
+    const shareBtn = document.getElementById('share');
+
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canBuzz = 'vibrate' in navigator;
+
+    let index = 0, times = [], combo = 0, finished = false, rafId = null, shareText = '';
+    let bestReg = Number(localStorage.getItem('HSR')) || 0;
+    let bestSuf = Number(localStorage.getItem('HSS')) || 0;
+
+    function fmt(s) { return Number(s).toFixed(3); }
+
+    function renderBest() {
+      const b = shuffleCb.checked ? bestSuf : bestReg;
+      best.innerHTML = '<span class="best-label">' + (shuffleCb.checked ? 'shuffle best' : 'best') + '</span>' +
+                       '<span class="best-val">' + (b > 0 ? fmt(b) + 's' : '—') + '</span>';
+    }
+
+    function setCap(el, i) {
+      if (i < 0 || i > 25) { el.textContent = ''; el.className = el.className.replace(' ghost', '') + ' ghost'; return; }
+      el.classList.remove('ghost', 'done', 'far');
+      el.textContent = arr[i];
+      if (i < index) el.classList.add('done');
+      else if (i > index + 1) el.classList.add('far');
+    }
+
+    function renderCarousel() {
+      setCap(caps.m2, index - 2);
+      setCap(caps.m1, index - 1);
+      setCap(caps.p1, index + 1);
+      setCap(caps.p2, index + 2);
+      if (!finished) letterEl.textContent = arr[index];
+    }
+
+    function updateHud() {
+      progEl.textContent = index + '/26';
+      comboEl.textContent = combo;
+      progFill.style.width = ((index / 26) * 100).toFixed(1) + '%';
+    }
+
+    function tickTimer() {
+      if (!times.length || finished) return;
+      timerEl.textContent = fmt((Date.now() - times[0]) / 1000);
+      rafId = requestAnimationFrame(tickTimer);
+    }
+    function stopTimer() { if (rafId) cancelAnimationFrame(rafId); rafId = null; }
+
+    function pressAnim() {
+      if (canBuzz) navigator.vibrate(10);
+      if (reduce) return;
+      letterEl.classList.remove('press'); void letterEl.offsetWidth; letterEl.classList.add('press');
+    }
+    function wrongAnim() {
+      warnEl.textContent = 'Wrong key — combo reset';
+      if (canBuzz) navigator.vibrate([25, 40, 25]);
+      if (reduce) return;
+      letterEl.classList.remove('wrong-anim'); void letterEl.offsetWidth; letterEl.classList.add('wrong-anim');
+    }
+
+    function finish() {
+      finished = true;
+      stopTimer();
+      const total = (times[25] - times[0]) / 1000;
+      timerEl.textContent = fmt(total);
+      progEl.textContent = '26/26';
+      progFill.style.width = '100%';
+      typer.setAttribute('disabled', 'true');
+      letterEl.classList.add('finished');
+      letterEl.textContent = fmt(total) + 's';
+      ['m2', 'm1', 'p1', 'p2'].forEach(k => { caps[k].textContent = ''; caps[k].classList.add('ghost'); });
+
+      const rt = times.map((t, i) => i === 0 ? 0 : (t - times[i - 1]) / 1000);
+      let fastI = -1, slowI = -1, fastV = Infinity, slowV = -Infinity;
+      rt.forEach((v, i) => { if (i === 0) return; if (v < fastV) { fastV = v; fastI = i; } if (v > slowV) { slowV = v; slowI = i; } });
+
+      let html = '<div class="title">Final results 🏆</div>';
+      rt.forEach((v, i) => {
+        const cls = i === fastI ? ' fast' : (i === slowI ? ' slow' : '');
+        const t = i === 0 ? 'Start' : fmt(v) + 's';
+        html += '<div class="element' + cls + '" style="animation-delay:' + (i * 20) + 'ms">' +
+                '<div class="key">' + arr[i] + '</div><div class="time">' + t + '</div></div>';
+      });
+      results.innerHTML = html;
+      logPanel.classList.remove('hidden');
+
+      const record = shuffleCb.checked
+        ? (bestSuf === 0 || total < bestSuf)
+        : (bestReg === 0 || total < bestReg);
+      if (record) {
+        if (shuffleCb.checked) { bestSuf = total; localStorage.setItem('HSS', total); }
+        else { bestReg = total; localStorage.setItem('HSR', total); }
+        info.innerHTML = '<span class="record">NEW RECORD — ' + fmt(total) + 's</span>';
+        if (canBuzz) navigator.vibrate([20, 30, 20, 30, 60]);
+      } else {
+        info.textContent = 'Finished in ' + fmt(total) + 's';
+      }
+      renderBest();
+
+      shareText = '⌨️ Typefast A→Z — I typed the whole alphabet in ' + fmt(total) + 's' +
+                  (shuffleCb.checked ? ' (shuffle mode)' : '') +
+                  (record ? ' — new personal best! 🏆' : '') +
+                  '\nCan you beat it? https://devashishg.github.io/typing-test.html';
+    }
+
+    function handleChar(ch) {
+      if (finished) return;
+      if (ch === arr[index]) {
+        const now = Date.now();
+        if (index === 0) { times = [now]; stopTimer(); tickTimer(); }
+        else times.push(now);
+        index++; combo++;
+        warnEl.textContent = '';
+        pressAnim();
+        if (index >= 26) { updateHud(); finish(); return; }
+        renderCarousel();
+        updateHud();
+        info.textContent = 'Elapsed: ' + fmt((now - times[0]) / 1000) + 's';
+      } else {
+        combo = 0;
+        updateHud();
+        wrongAnim();
+      }
+    }
+
+    typer.addEventListener('input', function (e) {
+      try {
+        const it = (e.inputType || '').toLowerCase();
+        if (/paste|drop/.test(it)) {
+          resetAction();
+          info.innerHTML = '<font color="red">Pasting / dropping isn\'t fair 😞 — game reset.</font>';
+          return;
         }
-        const toggle = document.querySelector('.theme-toggle');
-        toggle?.addEventListener('click', () => {
-            const isLight = document.body.classList.toggle('light');
-            localStorage.setItem('typing-theme', isLight ? 'light' : 'dark');
-        });
-    })();
-</script>
+        if (!/insert/.test(it)) { typer.value = ''; return; }
+        const data = e.data || '';
+        typer.value = '';
+        if (!data) return;
+        handleChar(data[data.length - 1].toUpperCase());
+      } catch (err) { info.textContent = err.message; }
+    });
+
+    typer.addEventListener('keyup', function (e) { if (e.key === 'Enter') resetAction(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && document.activeElement !== typer) resetAction();
+    });
+    shuffleCb.addEventListener('change', resetAction);
+    resetBtn.addEventListener('click', resetAction);
+
+    shareBtn.addEventListener('click', function () {
+      if (!shareText) return;
+      if (navigator.share) {
+        navigator.share({ title: 'Typefast A→Z', text: shareText }).catch(function () {});
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareText).then(function () {
+          shareBtn.classList.add('copied');
+          shareBtn.textContent = 'COPIED ✓';
+          setTimeout(function () {
+            shareBtn.classList.remove('copied');
+            shareBtn.textContent = 'SHARE ⤴';
+          }, 1600);
+        }).catch(function () { info.textContent = shareText; });
+      } else {
+        info.textContent = shareText;
+      }
+    });
+
+    function shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = (Math.random() * (i + 1)) | 0;
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+    }
+
+    function resetAction() {
+      finished = false; index = 0; times = []; combo = 0; shareText = '';
+      shareBtn.classList.remove('copied');
+      shareBtn.textContent = 'SHARE ⤴';
+      stopTimer();
+      arr = BASE.slice();
+      if (shuffleCb.checked) shuffle(arr);
+      typer.removeAttribute('disabled');
+      typer.value = '';
+      letterEl.classList.remove('finished');
+      results.innerHTML = '';
+      logPanel.classList.add('hidden');
+      info.textContent = '';
+      warnEl.textContent = '';
+      timerEl.textContent = '0.000';
+      renderCarousel();
+      updateHud();
+      renderBest();
+      typer.focus();
+    }
+
+    resetAction();
+  })();
+  </script>
+</body>
 
 </html>
