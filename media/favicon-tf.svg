@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<rect x="3" y="9" width="58" height="53" rx="13" fill="#b3ab99"/>
+<rect x="3" y="2" width="58" height="52" rx="13" fill="#faf7f0" stroke="#c9c2b2" stroke-width="2"/>
+<rect x="8" y="6" width="48" height="16" rx="8" fill="#ffffff" opacity="0.7"/>
+<text x="32" y="37" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-weight="bold" font-size="27" fill="#d85a30">TF</text>
+</svg>
